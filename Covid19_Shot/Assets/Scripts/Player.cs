@@ -6,12 +6,21 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     [SerializeField] int speed;
+    public int HP;
     public int bulletLevel;
+    public int painLevel;       //고통게이지
 
     private float moveX;
     private float moveY;
 
     [SerializeField] GameObject[] bullets;
+
+    Animator anim;
+
+    void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +31,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        anim.SetInteger("move", (int)moveX);
     }
 
 
