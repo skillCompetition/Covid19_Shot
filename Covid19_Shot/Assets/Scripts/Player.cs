@@ -10,18 +10,17 @@ public class Player : MonoBehaviour
     private float moveX;
     private float moveY;
 
-    Rigidbody2D rigidbody;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
     }
 
     void FixedUpdate()
@@ -35,6 +34,11 @@ public class Player : MonoBehaviour
         moveX = moveMentVector.x;
         moveY = moveMentVector.y;
 
+    }
+
+    void Shot()
+    {
+        
     }
 
 }
