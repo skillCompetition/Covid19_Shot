@@ -20,19 +20,39 @@ public class Enemy : MonoBehaviour
         rigid.AddForce(Vector2.down * speed);
     }
 
+    protected virtual void Update()
+    {
+        if (HP <= 0)
+        {
+            Dead();
+        }
+    }
+
     public virtual void Dead()
     {
         Destroy(gameObject);
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Wall")
         {
             //플레이어의 고통 게이지 +
 
-            //오브젝트 삭제
+
+            Dead();
         }
     }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            HP -=
+                collision.gameObject.GetComponent<Bullet>().damage;
+        }
+    }
+        
+        
     
 }
