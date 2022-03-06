@@ -6,7 +6,7 @@ public class SystemManager : MonoBehaviour
 {
     static SystemManager instance = null;
     
-    public SystemManager Instance
+    public static SystemManager Instance
     {
         get
         {
@@ -25,5 +25,14 @@ public class SystemManager : MonoBehaviour
         instance = this;
     }
 
+    [SerializeField]
+    Player player;
+    public Player Player
+    {
+        get
+        {
+            return player; 
+        }
+    }
     
 }

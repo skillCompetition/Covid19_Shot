@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public int speed;
     Rigidbody2D rigid;
 
+    protected Player player => SystemManager.Instance.Player;
 
     protected virtual void Awake()
     {
@@ -48,8 +49,17 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet")
         {
-            HP -=
-                collision.gameObject.GetComponent<Bullet>().damage;
+            Bullet bullet = collision.gameObject.GetComponent<Bullet>();
+            if (bullet == null)
+                return;
+
+            if (bullet.myBullet == Bullet.BulletType.Player)
+            {
+                HP -=
+               collision.gameObject.GetComponent<Bullet>().damage;
+            }
+            
+           
         }
     }
         

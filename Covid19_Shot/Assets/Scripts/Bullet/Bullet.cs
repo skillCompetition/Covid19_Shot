@@ -4,29 +4,37 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] float speed = 10f;
     public int damage;
 
-    void Awake()
+    public enum BulletType
     {
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+        Player,
+        Enemy
     }
 
+    public BulletType myBullet;
+    
     void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log(collision.gameObject.tag);
+        
+
         if (collision.gameObject.tag == "Wall")
         {
             Destroy(gameObject);
         }
-        else if(collision.gameObject.tag == "Enemy")
+
+        if (collision.gameObject.tag == "Enemy" && myBullet == BulletType.Player)
+        {
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.tag == "Player" && myBullet == BulletType.Enemy)
         {
             Destroy(gameObject);
         }
     }
+
 
 
 }
