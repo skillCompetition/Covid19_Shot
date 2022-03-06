@@ -34,6 +34,11 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
+    protected virtual IEnumerator Attack()
+    {
+        yield return null;
+    }
+
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Wall")

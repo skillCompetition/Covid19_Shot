@@ -38,7 +38,6 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         transform.position += new Vector3(moveX, moveY, 0) * speed * Time.deltaTime;
-        
     }
 
     void OnMove(InputValue inputValue)
