@@ -857,7 +857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28db0178e82c30448835b3751a17b8d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &3453254480734049413
+--- !u!1001 &1923988367
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -868,17 +868,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Virus Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3453254480457259701, guid: 00967d30f0106154a883c7470f99ed56, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3453254480457259702, guid: 00967d30f0106154a883c7470f99ed56, type: 3}
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3453254480457259702, guid: 00967d30f0106154a883c7470f99ed56, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8337201
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3453254480457259702, guid: 00967d30f0106154a883c7470f99ed56, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.18
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3453254480457259702, guid: 00967d30f0106154a883c7470f99ed56, type: 3}
       propertyPath: m_LocalPosition.z
@@ -912,5 +916,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3518228390247619397, guid: 00967d30f0106154a883c7470f99ed56, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: dace25e964d25e540aab6314b7d9246f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00967d30f0106154a883c7470f99ed56, type: 3}

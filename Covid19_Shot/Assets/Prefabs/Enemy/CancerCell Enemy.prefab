@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1753779682128273826}
   - component: {fileID: 1753779682128273853}
   - component: {fileID: 1753779682128273854}
+  - component: {fileID: 9140965708254480690}
   m_Layer: 0
   m_Name: CancerCell Enemy
   m_TagString: Enemy
@@ -146,3 +147,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.42, y: 0.88}
   m_EdgeRadius: 0
+--- !u!95 &9140965708254480690
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753779682128273825}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 016d3f04d506e724c9e4210a3ccca20b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

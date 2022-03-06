@@ -10,9 +10,12 @@ public class Enemy : MonoBehaviour
 
     protected Player player => SystemManager.Instance.Player;
 
+    Animator anim;
+
     protected virtual void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
 
@@ -60,6 +63,7 @@ public class Enemy : MonoBehaviour
 
             if (bullet.myBullet == Bullet.BulletType.Player)
             {
+                anim.SetTrigger("isHit");
                 HP -=
                collision.gameObject.GetComponent<Bullet>().damage;
             }

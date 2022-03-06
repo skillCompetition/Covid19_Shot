@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2586717438135840699}
   - component: {fileID: 2586717438135840698}
   - component: {fileID: 2586717438135840693}
+  - component: {fileID: 9197191341006696035}
   m_Layer: 0
   m_Name: Grem Enemy
   m_TagString: Enemy
@@ -136,3 +137,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 10
   speed: 50
+--- !u!95 &9197191341006696035
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2586717438135840694}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 273f8ad36ca9e214aaa84654cce94d64, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
