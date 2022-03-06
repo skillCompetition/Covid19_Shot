@@ -61,5 +61,12 @@ public class Player : MonoBehaviour
 
     }
 
-
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            Bullet bullet = collision.gameObject.GetComponent<Bullet>();
+            HP -= bullet.damage;
+        }
+    }
 }
