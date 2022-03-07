@@ -6,9 +6,11 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     [SerializeField] int speed;
+    public const float MaxHP = 100f;
+    public const float MaxPain = 100f;
     public int HP;
+    public int pain = 30;       //고통
     public int bulletLevel;
-    public int painLevel;       //고통게이지
 
     private float moveX;
     private float moveY;
@@ -66,7 +68,8 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             Bullet bullet = collision.gameObject.GetComponent<Bullet>();
-            HP -= bullet.damage;
+            if(bullet.myBullet == Bullet.BulletType.Enemy)
+                HP -= bullet.damage;
         }
     }
 }
