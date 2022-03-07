@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public const float MaxHP = 100f;
     public const float MaxPain = 100f;
     public int HP;
+    public int score;
     public int pain = 30;       //고통
     public int bulletLevel;
 
@@ -71,16 +72,13 @@ public class Player : MonoBehaviour
             if(bullet.myBullet == Bullet.BulletType.Enemy)
                 HP -= bullet.damage;
         }
-    }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
         if (collision.gameObject.tag == "Enemy")
         {
             //플레이어 HP 감소
 
 
-            Destroy(collision.gameObject); 
+            Destroy(collision.gameObject);
         }
     }
 }

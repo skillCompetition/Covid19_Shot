@@ -43,8 +43,11 @@ public class Enemy : MonoBehaviour
     }
 
 
-    protected virtual void OnTriggerExit2D(Collider2D collision)
+
+
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.gameObject.tag == "Bullet")
         {
             Bullet bullet = collision.gameObject.GetComponent<Bullet>();
@@ -57,14 +60,9 @@ public class Enemy : MonoBehaviour
                 HP -=
                collision.gameObject.GetComponent<Bullet>().damage;
             }
-            
+
         }
 
-        
-    }
-
-    protected virtual void OnCollisionEnter2D(Collision2D collision)
-    {
         if (collision.gameObject.tag == "Wall")
         {
             //플레이어의 고통 게이지 +
@@ -73,5 +71,4 @@ public class Enemy : MonoBehaviour
             Dead();
         }
     }
-
 }
