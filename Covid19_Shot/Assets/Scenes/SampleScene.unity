@@ -1587,8 +1587,8 @@ GameObject:
   - component: {fileID: 2120138263}
   - component: {fileID: 2120138265}
   - component: {fileID: 2120138266}
-  - component: {fileID: 2120138267}
   - component: {fileID: 2120138268}
+  - component: {fileID: 2120138267}
   m_Layer: 3
   m_Name: Boss Enemy
   m_TagString: Enemy
