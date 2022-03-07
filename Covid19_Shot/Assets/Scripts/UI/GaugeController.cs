@@ -8,13 +8,20 @@ public class GaugeController : MonoBehaviour
     [SerializeField] Image HPImg;
     [SerializeField] Image painImg;
 
+    [SerializeField] Text HPText;
+    [SerializeField] Text painText;
+
     float HP;
     float pain;
+
+    Player player => SystemManager.Instance.Player;
 
     void Awake()
     {
         HPImg = HPImg.GetComponent<Image>();
         painImg = painImg.GetComponent<Image>();
+        HPText = HPText.GetComponent<Text>();
+        painText = painText.GetComponent<Text>();
     }
 
 
@@ -26,5 +33,9 @@ public class GaugeController : MonoBehaviour
 
         HPImg.fillAmount = HP / Player.MaxHP;
         painImg.fillAmount = pain / Player.MaxPain;
+
+        HPText.text = player.HP.ToString();
+        painText.text = player.pain.ToString();
+
     }
 }
