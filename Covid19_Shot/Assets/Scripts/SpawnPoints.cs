@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class SpawnPoints : MonoBehaviour
 {
-    [SerializeField] GameObject[] spawnPoint;
+    [SerializeField] Transform[] spawnPoint;
+    [SerializeField] GameObject[] enemyType;
 
-    [SerializeField] Dictionary<string, GameObject> enemies = new Dictionary<string, GameObject>();
+    public float ranSpawnTime;
 
     void Awake()
     {
@@ -16,7 +17,7 @@ public class SpawnPoints : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(SpawnEnemy());
     }
 
     // Update is called once per frame
@@ -27,7 +28,11 @@ public class SpawnPoints : MonoBehaviour
 
     IEnumerator SpawnEnemy()
     {
-        int RanPoint = Random.Range(0, spawnPoint.Length);
-        yield return null;
+        int ranPoint = Random.Range(0, spawnPoint.Length);
+        int ranEnemy = Random.Range(0, enemyType.Length);
+
+        Instantiate(enemyType[ranEnemy], spawnPoint[ranPoint].position, spawnPoint[ranPoint].rotation);
+
+        yield return new WaitForSeconds(ranSpawnTime);
     }
 }

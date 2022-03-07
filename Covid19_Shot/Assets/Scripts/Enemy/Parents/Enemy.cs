@@ -68,7 +68,6 @@ public class Enemy : MonoBehaviour
                collision.gameObject.GetComponent<Bullet>().damage;
             }
             
-           
         }
     }
         
