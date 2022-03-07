@@ -42,18 +42,8 @@ public class Enemy : MonoBehaviour
         yield return null;
     }
 
-    protected virtual void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Wall")
-        {
-            //플레이어의 고통 게이지 +
 
-
-            Dead();
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D collision)
+    protected virtual void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Bullet")
         {
@@ -69,8 +59,19 @@ public class Enemy : MonoBehaviour
             }
             
         }
+
+        
     }
-        
-        
-    
+
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Wall")
+        {
+            //플레이어의 고통 게이지 +
+
+
+            Dead();
+        }
+    }
+
 }

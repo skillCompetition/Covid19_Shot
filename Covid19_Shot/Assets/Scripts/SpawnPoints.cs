@@ -28,11 +28,15 @@ public class SpawnPoints : MonoBehaviour
 
     IEnumerator SpawnEnemy()
     {
-        int ranPoint = Random.Range(0, spawnPoint.Length);
-        int ranEnemy = Random.Range(0, enemyType.Length);
+        for (; ; )
+        {
+            int ranPoint = Random.Range(0, spawnPoint.Length);
+            int ranEnemy = Random.Range(0, enemyType.Length);
 
-        Instantiate(enemyType[ranEnemy], spawnPoint[ranPoint].position, spawnPoint[ranPoint].rotation);
+            Instantiate(enemyType[ranEnemy], spawnPoint[ranPoint].position, spawnPoint[ranPoint].rotation);
 
-        yield return new WaitForSeconds(ranSpawnTime);
+            yield return new WaitForSeconds(ranSpawnTime);
+        }
+        
     }
 }

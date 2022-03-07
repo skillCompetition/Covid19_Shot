@@ -72,4 +72,15 @@ public class Player : MonoBehaviour
                 HP -= bullet.damage;
         }
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            //플레이어 HP 감소
+
+
+            Destroy(collision.gameObject); 
+        }
+    }
 }

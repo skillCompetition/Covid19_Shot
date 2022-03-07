@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2586717438135840698}
   - component: {fileID: 2586717438135840693}
   - component: {fileID: 9197191341006696035}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grem Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
