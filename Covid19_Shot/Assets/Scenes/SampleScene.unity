@@ -877,7 +877,7 @@ GameObject:
   - component: {fileID: 931442868}
   - component: {fileID: 931442867}
   m_Layer: 0
-  m_Name: GaugeController
+  m_Name: UIController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -899,6 +899,7 @@ MonoBehaviour:
   painImg: {fileID: 345597227}
   HPText: {fileID: 275369549}
   painText: {fileID: 1782653302}
+  scoreText: {fileID: 78898318}
 --- !u!4 &931442868
 Transform:
   m_ObjectHideFlags: 0
