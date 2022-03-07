@@ -6,11 +6,11 @@ public class Enemy : MonoBehaviour
 {
     public int HP;
     public int speed;
-    Rigidbody2D rigid;
+    protected Rigidbody2D rigid;
 
     protected Player player => SystemManager.Instance.Player;
 
-    Animator anim;
+     Animator anim;
 
     protected virtual void Awake()
     {
@@ -18,11 +18,14 @@ public class Enemy : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-
+    /// <summary>
+    /// 적군이 처음 등장하자마자 이동한다
+    /// </summary>
     protected virtual void Start()
     {
         rigid.AddForce(Vector2.down * speed);
     }
+
 
     protected virtual void Update()
     {
@@ -51,8 +54,6 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             Bullet bullet = collision.gameObject.GetComponent<Bullet>();
-            if (bullet == null)
-                return;
 
             if (bullet.myBullet == Bullet.BulletType.Player)
             {
@@ -65,6 +66,10 @@ public class Enemy : MonoBehaviour
 
         if (collision.gameObject.tag == "Wall")
         {
+
+            if (gameObject.name == "Boss Enemy")
+                return;
+
             //플레이어의 고통 게이지 +
 
 
