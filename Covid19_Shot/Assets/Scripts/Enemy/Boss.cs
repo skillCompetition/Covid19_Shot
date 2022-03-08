@@ -18,7 +18,7 @@ public class Boss : Enemy
         gameObject.SetActive(false);
     }
 
-    void ShowBoss()
+    public void ShowBoss()
     {
         gameObject.SetActive(true);
     }
