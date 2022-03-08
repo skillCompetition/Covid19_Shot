@@ -50,8 +50,9 @@ public class Enemy : MonoBehaviour
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
+        
 
-        if (collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.CompareTag("Bullet"))
         {
             Bullet bullet = collision.gameObject.GetComponent<Bullet>();
 
@@ -64,15 +65,13 @@ public class Enemy : MonoBehaviour
 
         }
 
-        if (collision.gameObject.tag == "Wall")
+        if (collision.gameObject.CompareTag("Wall"))
         {
 
             if (gameObject.name == "Boss Enemy")
                 return;
 
             //플레이어의 고통 게이지 +
-
-
             Dead();
         }
     }

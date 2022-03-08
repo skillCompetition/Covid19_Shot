@@ -17,17 +17,16 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.gameObject.tag == "Wall")
+        if (collision.gameObject.CompareTag("Wall"))
         {
             Destroy(gameObject);
         }
-
-        if (collision.gameObject.tag == "Enemy" && myBullet == BulletType.Player)
+        else if (collision.gameObject.CompareTag("Enemy") && myBullet == BulletType.Player)
         {
             Destroy(gameObject);
+            
         }
-
-        if (collision.gameObject.tag == "Player" && myBullet == BulletType.Enemy)
+        else if (collision.gameObject.CompareTag("Player") && myBullet == BulletType.Enemy)
         {
             Destroy(gameObject);
         }
