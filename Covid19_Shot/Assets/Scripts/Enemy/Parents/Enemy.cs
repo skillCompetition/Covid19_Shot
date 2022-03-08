@@ -56,12 +56,26 @@ public class Enemy : MonoBehaviour
         {
             Bullet bullet = collision.gameObject.GetComponent<Bullet>();
 
-            if (bullet.myBullet == Bullet.BulletType.Player)
+            if (bullet.myBullet == Bullet.BulletType.Enemy && gameObject.CompareTag("RedBloodCell"))
+            {
+                Debug.Log("Äô");
+                //°ø°Ý ÀÌº¥Æ® ·ê·ç
+                RedBloodCell redBloodCell = gameObject.GetComponent<RedBloodCell>();
+                if (!redBloodCell)
+                    return;
+
+                player.pain += redBloodCell.painDamage;
+                Destroy(gameObject);
+                
+                
+            }
+            if (bullet.myBullet == Bullet.BulletType.Player && !gameObject.CompareTag("RedBloodCell"))
             {
                 anim.SetTrigger("isHit");
                 HP -=
                collision.gameObject.GetComponent<Bullet>().damage;
             }
+            
 
         }
 

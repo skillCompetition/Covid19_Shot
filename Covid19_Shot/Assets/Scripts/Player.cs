@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         anim.SetInteger("move", (int)moveX);
+
     }
 
 
@@ -51,11 +52,20 @@ public class Player : MonoBehaviour
 
     }
 
+    /*void Fire()
+    {
+        
+            GameObject bullet = Instantiate(bullets[bulletLevel], transform.position, transform.rotation);
+            bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.up * speed, ForceMode2D.Impulse);  
+
+        
+    }*/
+
     IEnumerator Fire()
     {
         for (; ; )
         {
-            GameObject bullet =  Instantiate(bullets[bulletLevel], transform.position, transform.rotation);
+            GameObject bullet = Instantiate(bullets[bulletLevel], transform.position, transform.rotation);
             bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.up * speed, ForceMode2D.Impulse);
 
             yield return new WaitForSeconds(0.2f);

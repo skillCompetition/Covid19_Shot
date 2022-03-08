@@ -44,5 +44,14 @@ public class SystemManager : MonoBehaviour
             return spawnPoints;
         }
     }
-    
+
+    [SerializeField]
+    RedBloodCell redBloodCell;
+    public RedBloodCell RedBloodCell
+    {
+        get
+        {
+            return redBloodCell;
+        }
+    }
 }
