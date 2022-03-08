@@ -13,9 +13,19 @@ public class Boss : Enemy
         bullet = Resources.Load("Bullet/Boss Bullet") as GameObject;
     }
 
-    protected override void Start()
+    void Start()
     {
-        base.Start();
+        gameObject.SetActive(false);
+    }
+
+    void ShowBoss()
+    {
+        gameObject.SetActive(true);
+    }
+
+    void OnEnable()
+    {
+        rigid.AddForce(Vector2.down * speed);
         Invoke("Stop", 2f);
         ChooseAttack();
     }
@@ -108,6 +118,10 @@ public class Boss : Enemy
 
     }
 
+    /// <summary>
+    /// 작은 적군들 소환
+    /// </summary>
+    /// <returns></returns>
     IEnumerator SpawnEnemy()
     {
         if (HP <= 0)
