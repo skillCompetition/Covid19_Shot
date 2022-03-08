@@ -90,11 +90,16 @@ public class Boss : Enemy
         for (int i = 0; i < bulletNum; i++)
         {
             GameObject bullet = Instantiate(this.bullet, transform.position, transform.rotation);
+            GameObject bullet2 = Instantiate(this.bullet, transform.position, transform.rotation);
 
             Vector2 dirVec = new Vector2(Mathf.Cos(Mathf.PI * 2 * i / bulletNum), 
                                          Mathf.Sin(Mathf.PI * 2 * i / bulletNum));
+            Vector2 dirVec2 = new Vector2(Mathf.Sin(Mathf.PI * 2 * i / bulletNum),
+                                          Mathf.Cos(Mathf.PI * 2 * i / bulletNum));
+                            
 
             bullet.GetComponent<Rigidbody2D>().AddForce(dirVec.normalized * 10, ForceMode2D.Impulse);
+            bullet2.GetComponent<Rigidbody2D>().AddForce(dirVec2.normalized * 10, ForceMode2D.Impulse);
 
             yield return new WaitForSeconds(0.2f);
         }
