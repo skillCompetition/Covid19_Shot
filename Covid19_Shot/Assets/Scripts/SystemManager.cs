@@ -34,5 +34,15 @@ public class SystemManager : MonoBehaviour
             return player; 
         }
     }
+
+    [SerializeField]
+    SpawnPoints spawnPoints;
+    public SpawnPoints SpawnPoints
+    {
+        get
+        {
+            return spawnPoints;
+        }
+    }
     
 }

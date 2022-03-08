@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnPoints : MonoBehaviour
 {
     [SerializeField] Transform[] spawnPoint;
-    [SerializeField] GameObject[] enemyType;
+    public GameObject[] enemyType;
 
     public float ranSpawnTime;
 
@@ -17,7 +17,7 @@ public class SpawnPoints : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnEnemy());
+        //StartCoroutine(SpawnEnemy());
     }
 
     // Update is called once per frame
