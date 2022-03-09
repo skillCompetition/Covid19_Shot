@@ -5,17 +5,35 @@ using UnityEngine;
 public class NPC : MonoBehaviour
 {
 
+    protected Rigidbody2D rigid;
+    [SerializeField] protected float speed;
 
+    protected virtual void Awake()
+    {
+        rigid = GetComponent<Rigidbody2D>();
+    }
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
+    }
+
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            Dead();
+        }
+
+    }
+
+    protected virtual void Dead()
+    {
+        Destroy(gameObject);
     }
 }
