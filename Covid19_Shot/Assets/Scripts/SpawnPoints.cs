@@ -9,21 +9,9 @@ public class SpawnPoints : MonoBehaviour
 
     public float ranSpawnTime;
 
-    void Awake()
-    {
-        
-    }
-
-    // Start is called before the first frame update
     void Start()
     {
-        //StartCoroutine(SpawnEnemy());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        StartCoroutine(SpawnEnemy());
     }
 
     IEnumerator SpawnEnemy()

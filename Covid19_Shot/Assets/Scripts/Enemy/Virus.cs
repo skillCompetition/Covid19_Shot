@@ -30,7 +30,7 @@ public class Virus : Enemy
         {
             Vector3 dirVec = player.transform.position - transform.position;
             GameObject bullet = Instantiate(this.bullet, transform.position, transform.rotation);
-            bullet.GetComponent<Rigidbody2D>().AddForce(dirVec.normalized, ForceMode2D.Impulse);
+            bullet.GetComponent<Rigidbody2D>().AddForce(dirVec.normalized * 5, ForceMode2D.Impulse);
             yield return new WaitForSeconds(0.3f);
         }
 

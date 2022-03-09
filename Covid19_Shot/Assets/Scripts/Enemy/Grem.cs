@@ -34,7 +34,7 @@ public class Grem : Enemy
         { 
 
             GameObject bullet = Instantiate(this.bullet, transform.position, transform.rotation);
-            bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.down.normalized, ForceMode2D.Impulse);
+            bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.down.normalized * 5, ForceMode2D.Impulse);
             yield return new WaitForSeconds(1f);
         }
 
