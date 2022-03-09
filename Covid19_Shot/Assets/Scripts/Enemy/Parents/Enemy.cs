@@ -68,6 +68,7 @@ public class Enemy : MonoBehaviour
                 
                 
             }
+
             if (bullet.myBullet == Bullet.BulletType.Player && !gameObject.CompareTag("RedBloodCell"))
             {
                 anim.SetTrigger("isHit");
