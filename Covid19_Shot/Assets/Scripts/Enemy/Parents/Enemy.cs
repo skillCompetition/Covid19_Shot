@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
     /// </summary>
     protected virtual void Start()
     {
-        rigid.AddForce(Vector2.down * speed);
+        rigid.AddForce(Vector2.down.normalized * speed);
     }
 
 
@@ -58,7 +58,6 @@ public class Enemy : MonoBehaviour
 
             if (bullet.myBullet == Bullet.BulletType.Enemy && gameObject.CompareTag("RedBloodCell"))
             {
-                Debug.Log("Äô");
                 //°ø°Ý ÀÌº¥Æ® ·ê·ç
                 RedBloodCell redBloodCell = gameObject.GetComponent<RedBloodCell>();
                 if (!redBloodCell)

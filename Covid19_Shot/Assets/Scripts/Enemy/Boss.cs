@@ -25,7 +25,7 @@ public class Boss : Enemy
 
     void OnEnable()
     {
-        rigid.AddForce(Vector2.down * speed);
+        rigid.AddForce(Vector2.down.normalized * speed);
         Invoke("Stop", 2f);
         ChooseAttack();
     }

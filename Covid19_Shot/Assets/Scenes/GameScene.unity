@@ -2004,6 +2004,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2606942933241381680, guid: e84df76a0d234944384d3a1c0137b5f4, type: 3}
+      propertyPath: speed
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2606942933241381691, guid: e84df76a0d234944384d3a1c0137b5f4, type: 3}
       propertyPath: m_Name
       value: RedBloodCell
@@ -2018,7 +2022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2606942933241381693, guid: e84df76a0d234944384d3a1c0137b5f4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.36
+      value: -1.52
       objectReference: {fileID: 0}
     - target: {fileID: 2606942933241381693, guid: e84df76a0d234944384d3a1c0137b5f4, type: 3}
       propertyPath: m_LocalPosition.z

@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
         for (; ; )
         {
             GameObject bullet = Instantiate(bullets[bulletLevel], transform.position, transform.rotation);
-            bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.up * speed, ForceMode2D.Impulse);
+            bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.up.normalized * speed, ForceMode2D.Impulse);
 
             yield return new WaitForSeconds(0.2f);
 

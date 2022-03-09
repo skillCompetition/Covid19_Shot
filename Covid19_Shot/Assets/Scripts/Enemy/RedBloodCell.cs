@@ -13,7 +13,7 @@ public class RedBloodCell : Enemy
 
     void Start()
     {
-        rigid.AddForce(Vector2.up * speed);
+        rigid.AddForce(Vector2.up.normalized * speed);
     }
 
     protected override void Update()
