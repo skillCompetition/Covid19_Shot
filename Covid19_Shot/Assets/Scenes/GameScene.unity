@@ -1020,7 +1020,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1090148625}
   - component: {fileID: 1090148624}
-  - component: {fileID: 1090148628}
   - component: {fileID: 1090148627}
   - component: {fileID: 1090148626}
   m_Layer: 3
@@ -1132,23 +1131,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &1090148628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1090148623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 395446fd301654045bfa4e2ed83f53a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HP: 1
-  speed: 10
-  rigid: {fileID: 0}
-  anim: {fileID: 0}
-  Items: []
 --- !u!1 &1106266598
 GameObject:
   m_ObjectHideFlags: 0
@@ -1781,11 +1763,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a67818d5a78dc14288bb3ba10159660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoints:
-  - {fileID: 950334054}
-  - {fileID: 2016929116}
-  - {fileID: 1587449563}
-  redBloodCell: {fileID: 2606942933241381691, guid: e84df76a0d234944384d3a1c0137b5f4, type: 3}
 --- !u!114 &1890041073 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8029897390105889039, guid: a00b239a47d452e45aded4d6f3b8dc37, type: 3}
@@ -2079,21 +2056,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.375
---- !u!114 &5667238718471427794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5667238718471427801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ace142d7c25f1943a927f60a8190f8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HP: 10
-  speed: 5
-  painDamage: 10
 --- !u!1 &5667238718471427801
 GameObject:
   m_ObjectHideFlags: 0
@@ -2106,14 +2068,13 @@ GameObject:
   - component: {fileID: 5667238718471427806}
   - component: {fileID: 5667238718471427805}
   - component: {fileID: 5667238718471427804}
-  - component: {fileID: 5667238718471427794}
   m_Layer: 0
   m_Name: RedBloodCell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &5667238718471427804
 Rigidbody2D:
   serializedVersion: 4

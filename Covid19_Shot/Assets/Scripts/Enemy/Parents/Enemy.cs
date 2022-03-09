@@ -56,26 +56,12 @@ public class Enemy : MonoBehaviour
         {
             Bullet bullet = collision.gameObject.GetComponent<Bullet>();
 
-            if (bullet.myBullet == Bullet.BulletType.Enemy && gameObject.CompareTag("RedBloodCell"))
-            {
-                //공격 이벤트 룰루
-                RedBloodCell redBloodCell = gameObject.GetComponent<RedBloodCell>();
-                if (!redBloodCell)
-                    return;
-
-                player.pain += redBloodCell.painDamage;
-                Destroy(gameObject);
-                
-                
-            }
-
-            if (bullet.myBullet == Bullet.BulletType.Player && !gameObject.CompareTag("RedBloodCell"))
+            if (bullet.myBullet == Bullet.BulletType.Player)
             {
                 anim.SetTrigger("isHit");
                 HP -=
                collision.gameObject.GetComponent<Bullet>().damage;
             }
-            
 
         }
 
