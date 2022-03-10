@@ -67,6 +67,12 @@ public class Player : MonoBehaviour
             HP = 100;
     }
 
+    public void ReductionPain(int descreaseAmount)
+    {
+        pain -= descreaseAmount;
+        if (pain <= 0)
+            pain = 0;
+    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
