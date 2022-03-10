@@ -12,10 +12,11 @@ public class Player : MonoBehaviour
     public int score;
     public int pain = 30;       //고통
     public int bulletLevel;
+    public bool isInvincibility = false;        //플레이어의 무적상태
+
 
     private float moveX;
     private float moveY;
-    private bool isFire;
 
     [SerializeField] GameObject[] bullets;
 
@@ -31,11 +32,22 @@ public class Player : MonoBehaviour
     {
     }
 
+    public float curTime;
+
     // Update is called once per frame
     void Update()
     {
         anim.SetInteger("move", (int)moveX);
 
+        curTime += Time.deltaTime;
+        Debug.Log(curTime);
+
+        if (curTime >= 3f)
+        {
+            if (isInvincibility)
+                isInvincibility = false;
+            curTime = 0;
+        }
     }
 
 
@@ -74,13 +86,18 @@ public class Player : MonoBehaviour
             pain = 0;
     }
 
+
     void OnTriggerEnter2D(Collider2D collision)
     {
+        if (isInvincibility)
+            return;
+
         if (collision.gameObject.tag == "Bullet")
         {
             Bullet bullet = collision.gameObject.GetComponent<Bullet>();
             if(bullet.myBullet == Bullet.BulletType.Enemy)
                 HP -= bullet.damage;
+            Debug.Log("공격!");
         }
 
         if (collision.gameObject.tag == "Enemy")

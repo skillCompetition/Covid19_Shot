@@ -13,8 +13,8 @@ public class SpawnPoints : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(SpawnEnemy());
-        StartCoroutine(SpawnItem());
+        //StartCoroutine(SpawnEnemy());
+        //StartCoroutine(SpawnItem());
     }
 
     IEnumerator SpawnEnemy()
