@@ -25,8 +25,6 @@ public class RedBloodCell : NPC
     protected override void Dead()
     {
         //플레이어 고통게이지 증가
-        Debug.Log("//플레이어 고통게이지 증가");
-
 
         base.Dead();
 

@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
 
     private float moveX;
     private float moveY;
+    private bool isFire;
 
     [SerializeField] GameObject[] bullets;
 
@@ -28,7 +29,6 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine("Fire");
     }
 
     // Update is called once per frame
@@ -52,27 +52,19 @@ public class Player : MonoBehaviour
 
     }
 
-    /*void Fire()
+    void OnFire()
     {
-        
-            GameObject bullet = Instantiate(bullets[bulletLevel], transform.position, transform.rotation);
-            bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.up * speed, ForceMode2D.Impulse);  
 
-        
-    }*/
 
-    IEnumerator Fire()
-    {
-        for (; ; )
-        {
-            GameObject bullet = Instantiate(bullets[bulletLevel], transform.position, transform.rotation);
-            bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.up.normalized * speed, ForceMode2D.Impulse);
-
-            yield return new WaitForSeconds(0.2f);
-
-        }
-
+        GameObject bullet = Instantiate(bullets[bulletLevel], transform.position, transform.rotation);
+        bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.up.normalized * speed, ForceMode2D.Impulse);
     }
+
+    [SerializeField] float fireDelayTime;
+    float fireCurTime;
+
+
+
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -85,7 +77,7 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy")
         {
-            //플레이어 HP 감소
+            //플레이어 HP 감소 => 몬스터의 공격력의 절반
 
 
             Destroy(collision.gameObject);
