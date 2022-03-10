@@ -60,10 +60,12 @@ public class Player : MonoBehaviour
         bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.up.normalized * speed, ForceMode2D.Impulse);
     }
 
-    [SerializeField] float fireDelayTime;
-    float fireCurTime;
-
-
+    public void RecoverHP(int recoverAmount)
+    {
+        HP += recoverAmount;
+        if (HP >= 100)
+            HP = 100;
+    }
 
 
     void OnTriggerEnter2D(Collider2D collision)

@@ -26,7 +26,7 @@ public class HPItem : Item
 
     protected override void Use()
     {
-        player.HP += recoverAmount;
+        player.RecoverHP(recoverAmount);
         base.Use();
     }
 
