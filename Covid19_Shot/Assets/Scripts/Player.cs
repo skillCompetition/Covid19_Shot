@@ -104,8 +104,15 @@ public class Player : MonoBehaviour
         {
             //플레이어 HP 감소 => 몬스터의 공격력의 절반
 
-
             Destroy(collision.gameObject);
+
+            isInvincibility = true;
+            Invoke("InvincibilityChange", 1.5f);
         }
+    }
+
+    void InvincibilityChange()
+    {
+        isInvincibility = false;
     }
 }
