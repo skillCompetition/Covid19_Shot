@@ -6,12 +6,15 @@ public class SpawnPoints : MonoBehaviour
 {
     [SerializeField] Transform[] spawnPoint;
     public GameObject[] enemyType;
+    [SerializeField] Transform[] redSpawn;
+    public GameObject redBloodCell;
 
     public float ranSpawnTime;
 
     void Start()
     {
-        //StartCoroutine(SpawnEnemy());
+        StartCoroutine(SpawnEnemy());
+        StartCoroutine(SpawnItem());
     }
 
     IEnumerator SpawnEnemy()
@@ -26,5 +29,17 @@ public class SpawnPoints : MonoBehaviour
             yield return new WaitForSeconds(ranSpawnTime);
         }
         
+    }
+
+    IEnumerator SpawnItem()
+    {
+        for (; ; )
+        {
+            int ranRedPoint = Random.Range(0, redSpawn.Length);
+
+            Instantiate(redBloodCell, redSpawn[ranRedPoint].position, redSpawn[ranRedPoint].rotation);
+
+            yield return new WaitForSeconds(1f);
+        }
     }
 }

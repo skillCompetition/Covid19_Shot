@@ -5,6 +5,7 @@ using UnityEngine;
 public class RedBloodCell : NPC
 {
 
+
     protected override void Awake()
     {
         base.Awake();
