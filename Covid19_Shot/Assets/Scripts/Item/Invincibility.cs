@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Invincibility : Item
 {
-
+    Coroutine InvincibilityCoroutine = null;
     protected override void Awake()
     {
         base.Awake();
@@ -23,9 +23,12 @@ public class Invincibility : Item
     protected override void Use()
     {
         
-        player.curTime = 0;  
-        player.isInvincibility = true;
-        Debug.Log("½ÇÇà");
+        player.curTime = 0;
+
+        if (InvincibilityCoroutine != null)
+            StopCoroutine(player.ShowInvincibilityChane(3f,2.5f));
+
+        player.StartCoroutine(player.ShowInvincibilityChane(3f, 2.5f));
         base.Use();
 
     }

@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public int bulletLevel;
     public bool isInvincibility = false;        //플레이어의 무적상태
 
+    SpriteRenderer sprite;
 
     private float moveX;
     private float moveY;
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour
     void Awake()
     {
         anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     // Start is called before the first frame update
@@ -40,14 +42,15 @@ public class Player : MonoBehaviour
         anim.SetInteger("move", (int)moveX);
 
         curTime += Time.deltaTime;
-        Debug.Log(curTime);
 
-        if (curTime >= 3f)
+
+        /*if (curTime >= 3f)
         {
             if (isInvincibility)
                 isInvincibility = false;
             curTime = 0;
-        }
+        }*/
+
     }
 
 
@@ -71,6 +74,8 @@ public class Player : MonoBehaviour
         GameObject bullet = Instantiate(bullets[bulletLevel], transform.position, transform.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.up.normalized * speed, ForceMode2D.Impulse);
     }
+
+   
 
     public void RecoverHP(int recoverAmount)
     {
@@ -106,13 +111,26 @@ public class Player : MonoBehaviour
 
             Destroy(collision.gameObject);
 
-            isInvincibility = true;
-            Invoke("InvincibilityChange", 1.5f);
+            StartCoroutine(ShowInvincibilityChane(1.5f,1.5f));
+
         }
     }
 
-    void InvincibilityChange()
+
+    public IEnumerator ShowInvincibilityChane(float realTime,float showTime)
     {
+
+        isInvincibility = true;
+        sprite.color = new Color(1, 1, 1, 0.7f);
+
+        yield return new WaitForSeconds(showTime);
+
+        sprite.color = new Color(1, 1, 1, 1);
+
+        yield return new WaitForSeconds(realTime);
+
         isInvincibility = false;
+
+
     }
 }
