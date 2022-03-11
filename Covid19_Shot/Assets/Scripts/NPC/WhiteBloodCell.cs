@@ -1,24 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+    
 public class WhiteBloodCell : NPC
 {
-    [SerializeField] GameObject[] iTems;
 
-    protected override void Awake()
+    protected override void Awake() 
     {
         base.Awake();
     }
 
     void Start()
     {
+
         rigid.AddForce(Vector2.down.normalized * speed, ForceMode2D.Impulse);
     }
 
+    Vector3 pos;
+
     void Update()
     {
-        
+        pos = transform.position;
     }
 
     protected override void Dead()
@@ -29,9 +31,9 @@ public class WhiteBloodCell : NPC
     /// <summary>
     /// 아이템을 스폰
     /// </summary>
-    private void SpawnItem()
+    private void SpawnItemCheck()
     {
-
+        SystemManager.Instance.SpawnPoints.SpawnItem(gameObject.transform);
     }
 
     protected override void OnTriggerEnter2D(Collider2D collision)
@@ -44,7 +46,8 @@ public class WhiteBloodCell : NPC
 
             if (bullet.myBullet == Bullet.BulletType.Player)
             {
-                SpawnItem();
+                SpawnItemCheck();
+                
                 Dead();
             }
         }

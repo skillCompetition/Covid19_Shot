@@ -8,13 +8,15 @@ public class SpawnPoints : MonoBehaviour
     public GameObject[] enemyType;
     [SerializeField] Transform[] redSpawn;
     public GameObject redBloodCell;
+    [SerializeField] GameObject[] items;
+    public Transform whiteTrans;
 
     public float ranSpawnTime;
 
     void Start()
     {
         //StartCoroutine(SpawnEnemy());
-        //StartCoroutine(SpawnItem());
+        //StartCoroutine(SpawnRedBloodCell());
     }
 
     IEnumerator SpawnEnemy()
@@ -31,7 +33,7 @@ public class SpawnPoints : MonoBehaviour
         
     }
 
-    IEnumerator SpawnItem()
+    IEnumerator SpawnRedBloodCell()
     {
         for (; ; )
         {
@@ -41,5 +43,12 @@ public class SpawnPoints : MonoBehaviour
 
             yield return new WaitForSeconds(1f);
         }
+    }
+
+    public void SpawnItem(Transform transform)
+    {
+        Quaternion rotation = Quaternion.Euler(0,0,90);
+
+        Instantiate(items[Random.Range(0, items.Length)],transform.position, rotation);
     }
 }

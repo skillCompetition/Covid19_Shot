@@ -17,7 +17,7 @@ public class Item : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        rigid.AddForce(Vector2.down.normalized * speed);
+        rigid.AddForce(Vector2.down.normalized * speed,ForceMode2D.Impulse);
     }
 
     // Update is called once per frame

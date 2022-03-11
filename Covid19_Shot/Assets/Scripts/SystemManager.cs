@@ -45,13 +45,5 @@ public class SystemManager : MonoBehaviour
         }
     }
 
-    [SerializeField]
-    RedBloodCell redBloodCell;
-    public RedBloodCell RedBloodCell
-    {
-        get
-        {
-            return redBloodCell;
-        }
-    }
+
 }

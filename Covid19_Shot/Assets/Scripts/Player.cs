@@ -102,7 +102,6 @@ public class Player : MonoBehaviour
             Bullet bullet = collision.gameObject.GetComponent<Bullet>();
             if(bullet.myBullet == Bullet.BulletType.Enemy)
                 HP -= bullet.damage;
-            Debug.Log("АјАн!");
         }
 
         if (collision.gameObject.tag == "Enemy")
