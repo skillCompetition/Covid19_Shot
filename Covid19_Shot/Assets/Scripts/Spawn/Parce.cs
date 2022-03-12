@@ -5,7 +5,11 @@ using System.IO;
 
 public class Parce : MonoBehaviour
 {
-    List<Spawn> spawnList = new List<Spawn>();
+    public List<Spawn> spawnList = new List<Spawn>();
+
+
+    SpawnPoints spawnPoints => SystemManager.Instance.SpawnPoints;
+
 
     void Awake()
     {
@@ -39,7 +43,7 @@ public class Parce : MonoBehaviour
             Debug.Log(line);
 
             if (line == null)
-                return;
+                break;
 
             Spawn spawnData = new Spawn();
 
@@ -49,14 +53,11 @@ public class Parce : MonoBehaviour
 
             spawnList.Add(spawnData);
 
-
         }
+
 
         //stringReader로 열어둔 파일은 작업 후 꼭 닫기
         stringReader.Close();
-
-
-
 
     }
 }

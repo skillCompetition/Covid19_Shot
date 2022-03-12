@@ -18,19 +18,48 @@ public class SpawnPoints : MonoBehaviour
     {
         //StartCoroutine(SpawnEnemy());
         //StartCoroutine(SpawnRedBloodCell());
-
     }
 
-    IEnumerator SpawnEnemy()
+    public IEnumerator SpawnEnemy(List<Spawn> spawnList)
     {
-        for (; ; )
+
+        /* for (; ; )
+         {
+             int ranPoint = Random.Range(0, spawnPoint.Length);
+             int ranEnemy = Random.Range(0, enemyType.Length);
+
+             Instantiate(enemyType[ranEnemy], spawnPoint[ranPoint].position, spawnPoint[ranPoint].rotation);
+
+             yield return new WaitForSeconds(ranSpawnTime);
+         }*/
+
+
+        GameObject enemy = null;
+        
+        for (int i = 0; i < spawnList.Count; i++)
         {
-            int ranPoint = Random.Range(0, spawnPoint.Length);
-            int ranEnemy = Random.Range(0, enemyType.Length);
+            switch (spawnList[i].type)
+            {
+                case "B":
+                    enemy = enemyType[0];
+                    break;
+                case "C":
+                    enemy = enemyType[1];
+                    break;
+                case "G":
+                    enemy = enemyType[2];
+                    break;
+                case "V":
+                    enemy = enemyType[3];
+                    break;
 
-            Instantiate(enemyType[ranEnemy], spawnPoint[ranPoint].position, spawnPoint[ranPoint].rotation);
+                default:
+                    break;
+            }
 
-            yield return new WaitForSeconds(ranSpawnTime);
+            Instantiate(enemy, spawnPoint[spawnList[i].point].position, spawnPoint[spawnList[i].point].rotation);
+
+            yield return new WaitForSeconds(spawnList[i].delay);
         }
         
     }
