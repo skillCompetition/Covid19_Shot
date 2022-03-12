@@ -35,7 +35,15 @@ public class SystemManager : MonoBehaviour
         }
     }
 
-    
+    [SerializeField]
+    GameManager gameManager;
+    public GameManager GameManager
+    {
+        get
+        {
+            return gameManager;
+        }
+    }
 
     [SerializeField]
     SpawnPoints spawnPoints;

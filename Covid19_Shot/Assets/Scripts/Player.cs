@@ -6,11 +6,7 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     [SerializeField] int speed;
-    public const float MaxHP = 100f;
-    public const float MaxPain = 100f;
-    public int HP;
-    public int score;
-    public int pain = 30;       //고통
+    [SerializeField] GameObject[] bullets;
     public int bulletLevel;
     public bool isInvincibility = false;        //플레이어의 무적상태
 
@@ -19,8 +15,7 @@ public class Player : MonoBehaviour
     private float moveX;
     private float moveY;
 
-    [SerializeField] GameObject[] bullets;
-
+    GameManager gameManager => SystemManager.Instance.GameManager;
     Animator anim;
 
     void Awake()
@@ -45,6 +40,7 @@ public class Player : MonoBehaviour
 
     }
 
+    
 
     void FixedUpdate()
     {
@@ -71,16 +67,16 @@ public class Player : MonoBehaviour
 
     public void RecoverHP(int recoverAmount)
     {
-        HP += recoverAmount;
-        if (HP >= 100)
-            HP = 100;
+        gameManager.HP += recoverAmount;
+        if (gameManager.HP >= 100)
+            gameManager.HP = 100;
     }
 
     public void ReductionPain(int descreaseAmount)
     {
-        pain -= descreaseAmount;
-        if (pain <= 0)
-            pain = 0;
+        gameManager.pain -= descreaseAmount;
+        if (gameManager.pain <= 0)
+            gameManager.pain = 0;
     }
 
 
@@ -93,7 +89,7 @@ public class Player : MonoBehaviour
         {
             Bullet bullet = collision.gameObject.GetComponent<Bullet>();
             if(bullet.myBullet == Bullet.BulletType.Enemy)
-                HP -= bullet.damage;
+                gameManager.HP -= bullet.damage;
         }
 
         if (collision.gameObject.tag == "Enemy")

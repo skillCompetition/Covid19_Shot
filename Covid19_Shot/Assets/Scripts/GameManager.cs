@@ -5,6 +5,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
+    public const float MaxHP = 100f;
+    public const float MaxPain = 100f;
+    public int HP;
+    public int score;
+    public int pain;
 
 
 
@@ -16,7 +21,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        HP = (int)MaxHP;
+        pain = 30;
+
     }
 
     // Update is called once per frame

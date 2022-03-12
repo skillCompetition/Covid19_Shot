@@ -17,7 +17,7 @@ public class UIController : MonoBehaviour
     [Header("Score")]
     [SerializeField] Text scoreText;
 
-    Player player => SystemManager.Instance.Player;
+    GameManager gameManager => SystemManager.Instance.GameManager;
 
     void Awake()
     {
@@ -32,16 +32,16 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HP = SystemManager.Instance.Player.HP;
-        pain = SystemManager.Instance.Player.pain;
+        HP = gameManager.HP;
+        pain = gameManager.pain;
 
-        HPImg.fillAmount = HP / Player.MaxHP;
-        painImg.fillAmount = pain / Player.MaxPain;
+        HPImg.fillAmount = HP / GameManager.MaxHP;
+        painImg.fillAmount = pain / GameManager.MaxPain;
 
-        HPText.text = player.HP.ToString();
-        painText.text = player.pain.ToString();
+        HPText.text = gameManager.HP.ToString();
+        painText.text = gameManager.pain.ToString();
 
-        scoreText.text =  "score : "  + player.score.ToString();
+        scoreText.text =  "score : "  + gameManager.score.ToString();
 
     }
 }
