@@ -5,7 +5,17 @@ using UnityEngine;
 public class Boss : Enemy
 {
     GameObject bullet;
+
+    //0 : B
+    //1 : C
+    //2 : G
+    //3 : V
+    //4 : R
+    //5 : W
     [SerializeField] GameObject spawnEnemy;
+
+    //0 ~ 7 : Enemy + White
+    //8 ~ 9 : Red
     [SerializeField] Transform[] spawnPoints; 
 
     public bool isDead;
@@ -17,7 +27,7 @@ public class Boss : Enemy
 
     void Start()
     {
-        //gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     public void ShowBoss()

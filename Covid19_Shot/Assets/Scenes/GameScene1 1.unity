@@ -947,7 +947,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &870037432
 GameObject:
@@ -1140,7 +1140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 950334055}
   m_Layer: 0
-  m_Name: Point
+  m_Name: RedPoint
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1153,12 +1153,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950334054}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.6, y: -4.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1824221520}
-  m_RootOrder: 0
+  m_Father: {fileID: 1043041233}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &995900789
 GameObject:
@@ -1328,6 +1328,9 @@ Transform:
   - {fileID: 475669745}
   - {fileID: 273969424}
   - {fileID: 473618280}
+  - {fileID: 950334055}
+  - {fileID: 2016929117}
+  - {fileID: 1587449564}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1351,11 +1354,16 @@ MonoBehaviour:
   - {fileID: 475669745}
   - {fileID: 273969424}
   - {fileID: 473618280}
+  - {fileID: 950334055}
+  - {fileID: 2016929117}
+  - {fileID: 1587449564}
   enemyType:
   - {fileID: 5069029379029905085, guid: 16af1bb5362f3684391a195b7a2e06b3, type: 3}
   - {fileID: 1753779682128273825, guid: adc0e0aa388f5654a8511d835e5529bb, type: 3}
   - {fileID: 2586717438135840694, guid: 5aa498369ed9d6242b4033def0a60485, type: 3}
   - {fileID: 3453254480457259701, guid: 00967d30f0106154a883c7470f99ed56, type: 3}
+  - {fileID: 4331771241176428615, guid: 117d0cd050355554fb1d8655d99a6302, type: 3}
+  - {fileID: 5650037111168888843, guid: b91e7f256d999cb418e1793505e8d452, type: 3}
   redSpawn:
   - {fileID: 950334055}
   - {fileID: 2016929117}
@@ -1743,7 +1751,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1587449564}
   m_Layer: 0
-  m_Name: Point (2)
+  m_Name: RedPoint (2)
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1756,12 +1764,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587449563}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.6, y: -4.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1824221520}
-  m_RootOrder: 2
+  m_Father: {fileID: 1043041233}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1621661427
 GameObject:
@@ -2041,39 +2049,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1824221519
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1824221520}
-  m_Layer: 0
-  m_Name: RedBloodCellSpawnPoints
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1824221520
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824221519}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 950334055}
-  - {fileID: 2016929117}
-  - {fileID: 1587449564}
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1890041073 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8029897390105889039, guid: a00b239a47d452e45aded4d6f3b8dc37, type: 3}
@@ -2125,7 +2100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2016929117}
   m_Layer: 0
-  m_Name: Point (1)
+  m_Name: RedPoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2138,12 +2113,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2016929116}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -4.5899997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1824221520}
-  m_RootOrder: 1
+  m_Father: {fileID: 1043041233}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2019771848
 GameObject:
@@ -2304,7 +2279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &2120138263
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2370,7 +2345,7 @@ Transform:
   - {fileID: 1416301519}
   - {fileID: 1944725903}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2120138265
 MonoBehaviour:

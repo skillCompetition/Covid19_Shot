@@ -20,7 +20,6 @@ public class Parce : MonoBehaviour
     void Start()
     {
         spawnPoints.StartCoroutine(spawnPoints.SpawnEnemy(spawnList));
-        Debug.Log("ÈÄ");
     }
 
     void Update()
