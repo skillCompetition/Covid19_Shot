@@ -33,8 +33,9 @@ public class SpawnPoints : MonoBehaviour
              yield return new WaitForSeconds(ranSpawnTime);
          }*/
 
-
+        Debug.Log("¾Ö¿ë");
         GameObject enemy = null;
+
         
         for (int i = 0; i < spawnList.Count; i++)
         {
