@@ -13,10 +13,12 @@ public class SpawnPoints : MonoBehaviour
 
     public float ranSpawnTime;
 
+
     void Start()
     {
         //StartCoroutine(SpawnEnemy());
         //StartCoroutine(SpawnRedBloodCell());
+
     }
 
     IEnumerator SpawnEnemy()

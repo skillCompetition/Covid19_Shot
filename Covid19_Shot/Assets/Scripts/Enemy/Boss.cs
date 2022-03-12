@@ -42,7 +42,6 @@ public class Boss : Enemy
         if(HP <= 0)
         {
             StopAllCoroutines();
-            //Á×´Â ÀÌÆÑÆ®..?
             //Scene2·Î ³Ñ¾î°¨
         }
         base.Update();
