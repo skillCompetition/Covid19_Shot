@@ -83,8 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e10c149348e9ee74a934e4abdb8f8d56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  damage: 0
+  damage: 3
   myBullet: 0
 --- !u!1001 &718351162642683262
 PrefabInstance:

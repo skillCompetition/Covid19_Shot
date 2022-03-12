@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e10c149348e9ee74a934e4abdb8f8d56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 4
   myBullet: 0
 --- !u!1001 &4129121317186592679
 PrefabInstance:

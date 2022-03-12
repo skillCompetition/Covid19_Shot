@@ -56,7 +56,7 @@ public class Enemy : MonoBehaviour
         {
             Bullet bullet = collision.gameObject.GetComponent<Bullet>();
 
-            if (bullet.myBullet == Bullet.BulletType.Player)
+            if (bullet.myBullet == Bullet.BulletType.Player) //플레이어 총알에 맞았을때
             {
                 anim.SetTrigger("isHit");
                 HP -=

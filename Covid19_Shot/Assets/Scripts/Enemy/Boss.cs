@@ -7,6 +7,8 @@ public class Boss : Enemy
     GameObject bullet;
     [SerializeField] GameObject spawnEnemy;
     [SerializeField] Transform[] spawnPoints; 
+
+    public bool isDead;
     protected override void Awake()
     {
         base.Awake();
@@ -37,6 +39,12 @@ public class Boss : Enemy
 
     protected override void Update()
     {
+        if(HP <= 0)
+        {
+            StopAllCoroutines();
+            //Á×´Â ÀÌÆÑÆ®..?
+            //Scene2·Î ³Ñ¾î°¨
+        }
         base.Update();
     }
 
@@ -47,6 +55,8 @@ public class Boss : Enemy
     /// </summary>
     void ChooseAttack()
     {
+
+
         if (attackNum >= 3)
             attackNum = 0;
 
