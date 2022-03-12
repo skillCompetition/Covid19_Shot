@@ -43,14 +43,6 @@ public class Player : MonoBehaviour
 
         curTime += Time.deltaTime;
 
-
-        /*if (curTime >= 3f)
-        {
-            if (isInvincibility)
-                isInvincibility = false;
-            curTime = 0;
-        }*/
-
     }
 
 

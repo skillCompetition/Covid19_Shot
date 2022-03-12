@@ -35,6 +35,8 @@ public class SystemManager : MonoBehaviour
         }
     }
 
+    
+
     [SerializeField]
     SpawnPoints spawnPoints;
     public SpawnPoints SpawnPoints
@@ -44,6 +46,8 @@ public class SystemManager : MonoBehaviour
             return spawnPoints;
         }
     }
+
+    
 
 
 }
