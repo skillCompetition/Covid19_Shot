@@ -562,7 +562,7 @@ RectTransform:
   - {fileID: 78898317}
   - {fileID: 1782844484}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -661,7 +661,7 @@ Transform:
   - {fileID: 902057571}
   - {fileID: 1581646667}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &516267343
 PrefabInstance:
@@ -939,6 +939,7 @@ MonoBehaviour:
   gameManager: {fileID: 1233873582}
   spawnPoints: {fileID: 1043041234}
   boss: {fileID: 2120138265}
+  spawnDataReader: {fileID: 1956104346}
 --- !u!4 &870037434
 Transform:
   m_ObjectHideFlags: 0
@@ -1086,7 +1087,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &950334054
 GameObject:
@@ -1290,7 +1291,7 @@ Transform:
   - {fileID: 2016929117}
   - {fileID: 1587449564}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1043041234
 MonoBehaviour:
@@ -1548,7 +1549,7 @@ Transform:
   m_LocalScale: {x: 17.8, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1399506138
 GameObject:
@@ -1796,7 +1797,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1662004739
 GameObject:
@@ -2054,7 +2055,7 @@ GameObject:
   - component: {fileID: 1956104347}
   - component: {fileID: 1956104346}
   m_Layer: 0
-  m_Name: Parce
+  m_Name: SpawnDataReader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2085,7 +2086,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2016929116
 GameObject:
@@ -2342,7 +2343,7 @@ Transform:
   - {fileID: 1416301519}
   - {fileID: 1944725903}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2120138265
 MonoBehaviour:
