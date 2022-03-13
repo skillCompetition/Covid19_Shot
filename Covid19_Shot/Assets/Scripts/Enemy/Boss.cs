@@ -12,8 +12,6 @@ public class Boss : Enemy
 
 
     [SerializeField] Transform[] spawnPoints; 
-
-    public bool isDead;
     protected override void Awake()
     {
         base.Awake();

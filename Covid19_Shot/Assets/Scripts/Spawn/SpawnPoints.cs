@@ -64,11 +64,13 @@ public class SpawnPoints : MonoBehaviour
                     break;
             }
 
-            Instantiate(enemy, spawnPoint[spawnList[i].point].position, spawnPoint[spawnList[i].point].rotation);
+             Instantiate(enemy, spawnPoint[spawnList[i].point].position, spawnPoint[spawnList[i].point].rotation);
 
             yield return new WaitForSeconds(spawnList[i].delay);
         }
 
+        yield return new WaitForSeconds(5f);
+        
         Instantiate(boss, bossPos.position, bossPos.rotation);
     }
     

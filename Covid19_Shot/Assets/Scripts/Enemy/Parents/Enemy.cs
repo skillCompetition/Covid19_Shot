@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
     public int speed;
     protected Rigidbody2D rigid;
 
+    public bool isDead;
+
     protected Player player => SystemManager.Instance.Player;
 
      Animator anim;
@@ -37,6 +39,7 @@ public class Enemy : MonoBehaviour
 
     public virtual void Dead()
     {
+        isDead = true;
         Destroy(gameObject);
     }
 
