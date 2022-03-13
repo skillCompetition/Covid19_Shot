@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        else if (collision.gameObject.CompareTag("Enemy") && myBullet == BulletType.Player)
+        else if ((collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Boss")) && myBullet == BulletType.Player)
         {
             Destroy(gameObject);
             
