@@ -938,6 +938,7 @@ MonoBehaviour:
   player: {fileID: 1890041073}
   gameManager: {fileID: 1233873582}
   spawnPoints: {fileID: 1043041234}
+  boss: {fileID: 2120138265}
 --- !u!4 &870037434
 Transform:
   m_ObjectHideFlags: 0

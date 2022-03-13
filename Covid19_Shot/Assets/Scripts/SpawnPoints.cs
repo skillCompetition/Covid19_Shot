@@ -54,13 +54,13 @@ public class SpawnPoints : MonoBehaviour
 
             yield return new WaitForSeconds(spawnList[i].delay);
         }
-        
-        
+
+        EndSpawn();
     }
 
     void EndSpawn()
     {
-
+        SystemManager.Instance.Boss.ShowBoss();
     }
     
 

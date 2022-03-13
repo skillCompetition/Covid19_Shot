@@ -55,5 +55,13 @@ public class SystemManager : MonoBehaviour
         }
     }
 
-   
-}
+    [SerializeField]
+    Boss boss;
+    public Boss Boss
+    {
+        get
+        {
+            return boss;
+        }
+    }
+} 
