@@ -67,7 +67,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
 
-            if (gameObject.name == "Boss Enemy")
+            if (gameObject.CompareTag("Boss"))
                 return;
 
             //플레이어의 고통 게이지 +

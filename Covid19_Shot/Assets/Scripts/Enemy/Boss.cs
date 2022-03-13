@@ -6,16 +6,10 @@ public class Boss : Enemy
 {
     GameObject bullet;
 
-    //0 : B
-    //1 : C
-    //2 : G
-    //3 : V
-    //4 : R
-    //5 : W
+
     [SerializeField] GameObject spawnEnemy;
 
-    //0 ~ 7 : Enemy + White
-    //8 ~ 9 : Red
+
     [SerializeField] Transform[] spawnPoints; 
 
     public bool isDead;
@@ -27,19 +21,15 @@ public class Boss : Enemy
 
     protected override void Start()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        rigid.AddForce(Vector2.down.normalized * speed);
+        Invoke("Stop", 2f);
+        ChooseAttack();
     }
 
     public void ShowBoss()
     {
         gameObject.SetActive(true);
-    }
-
-    void OnEnable()
-    {
-        rigid.AddForce(Vector2.down.normalized * speed);
-        Invoke("Stop", 2f);
-        ChooseAttack();
     }
 
     private void Stop()
@@ -52,15 +42,14 @@ public class Boss : Enemy
         if(HP <= 0)
         {
             StopAllCoroutines();
-            //Scene2로 넘어감
         }
         base.Update();
     }
 
     public override void Dead()
     {
-        
-
+        SystemManager.Instance.StageFlow.stage++;
+        SystemManager.Instance.StageFlow.CheckStage(SystemManager.Instance.StageFlow.stage);
         base.Dead();
     }
 

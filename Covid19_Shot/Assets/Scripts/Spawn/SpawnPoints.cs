@@ -4,9 +4,23 @@ using UnityEngine;
 
 public class SpawnPoints : MonoBehaviour
 {
-    [SerializeField] Transform[] spawnPoint;
+    //0 : B
+    //1 : C
+    //2 : G
+    //3 : V
+    //4 : R
+    //5 : W
     public GameObject[] enemyType;
+
+    [SerializeField] GameObject boss;
+    [SerializeField] Transform bossPos;
+
+    //0 ~ 7 : Enemy + White
+    //8 ~ 9 : Red
+    [SerializeField] Transform[] spawnPoint;
+ 
     [SerializeField] GameObject[] items;
+
     public Transform whiteTrans;
 
     public float ranSpawnTime;
@@ -55,11 +69,7 @@ public class SpawnPoints : MonoBehaviour
             yield return new WaitForSeconds(spawnList[i].delay);
         }
 
-    }
-
-    void EndSpawn()
-    {
-        SystemManager.Instance.Boss.ShowBoss();
+        Instantiate(boss, bossPos.position, bossPos.rotation);
     }
     
 

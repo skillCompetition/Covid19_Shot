@@ -10,9 +10,10 @@ public class StageFlow : MonoBehaviour
     SpawnPoints spawnPoints =>
         SystemManager.Instance.SpawnPoints;
 
+    List<Spawn> spawnList = new List<Spawn>();
 
-    List<Spawn> spawnList1 = new List<Spawn>();
-    List<Spawn> spawnList2 = new List<Spawn>();
+
+    public int stage = 1;
 
     private void Awake()
     {
@@ -20,11 +21,33 @@ public class StageFlow : MonoBehaviour
 
     void Start()
     {
-        spawnList1 = spawnDataReader.ReadSpawnFile("stage1");
-        spawnList1 = spawnDataReader.ReadSpawnFile("stage2");
+        CheckStage(stage);
+
 
     }
 
+    public void CheckStage(int stage)
+    {
+        switch (stage)
+        {
+            case 1:
+                spawnList = spawnDataReader.ReadSpawnFile("stage1");
+                spawnPoints.StartCoroutine(spawnPoints.SpawnEnemy(spawnList));
+                stage++;
+                break;
+            case 2:
+                spawnList = spawnDataReader.ReadSpawnFile("stage2");
+                spawnPoints.StartCoroutine(spawnPoints.SpawnEnemy(spawnList));
+                stage++;
+                break;
+
+            case 3:
+                //∞‘¿” ≥°
+                break;
+            default:
+                break;
+        }
+    }
 
     // Update is called once per frame
     void Update()

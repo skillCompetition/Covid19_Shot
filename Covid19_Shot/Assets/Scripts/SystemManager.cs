@@ -55,16 +55,6 @@ public class SystemManager : MonoBehaviour
         }
     }
 
-    [SerializeField]
-    Boss boss;
-    public Boss Boss
-    {
-        get
-        {
-            return boss;
-
-        }
-    }
 
     [SerializeField]
     SpawnDataReader spawnDataReader;
@@ -75,4 +65,15 @@ public class SystemManager : MonoBehaviour
             return spawnDataReader;
         }
     }
+
+    [SerializeField]
+    StageFlow stageFlow;
+    public StageFlow StageFlow
+    {
+        get
+        {
+            return stageFlow;
+        }
+    }
+
 } 
