@@ -66,5 +66,13 @@ public class SystemManager : MonoBehaviour
         }
     }
 
-    
+    [SerializeField]
+    SpawnDataReader spawnDataReader;
+    public SpawnDataReader SpawnDataReader
+    {
+        get
+        {
+            return spawnDataReader;
+        }
+    }
 } 

@@ -13,19 +13,19 @@ public class SpawnDataReader : MonoBehaviour
 
     void Awake()
     {
-        ReadSpawnFile(stageName);
+        //ReadSpawnFile(stageName);
 
     }
 
     void Start()
     {
-        spawnPoints.StartCoroutine(spawnPoints.SpawnEnemy(spawnList));
+        //spawnPoints.StartCoroutine(spawnPoints.SpawnEnemy(spawnList));
     }
 
 
 
 
-    void ReadSpawnFile(string stageName)
+    public List<Spawn> ReadSpawnFile(string stageName)
     {
         
         spawnList.Clear();
@@ -39,7 +39,6 @@ public class SpawnDataReader : MonoBehaviour
         {
             //ReadLine() = 텍스트 데이터를 한 줄 씩 반환
             string line = stringReader.ReadLine();
-            Debug.Log(line);
 
             if (line == null)
                 break;
@@ -58,5 +57,6 @@ public class SpawnDataReader : MonoBehaviour
         //stringReader로 열어둔 파일은 작업 후 꼭 닫기
         stringReader.Close();
 
+        return spawnList;
     }
 }
