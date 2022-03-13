@@ -6,8 +6,6 @@ public class SpawnPoints : MonoBehaviour
 {
     [SerializeField] Transform[] spawnPoint;
     public GameObject[] enemyType;
-    [SerializeField] Transform[] redSpawn;
-    public GameObject redBloodCell;
     [SerializeField] GameObject[] items;
     public Transform whiteTrans;
 
@@ -57,19 +55,10 @@ public class SpawnPoints : MonoBehaviour
             yield return new WaitForSeconds(spawnList[i].delay);
         }
         
+        
     }
 
-    IEnumerator SpawnRedBloodCell()
-    {
-        for (; ; )
-        {
-            int ranRedPoint = Random.Range(0, redSpawn.Length);
-
-            Instantiate(redBloodCell, redSpawn[ranRedPoint].position, redSpawn[ranRedPoint].rotation);
-
-            yield return new WaitForSeconds(1f);
-        }
-    }
+    
 
     public void SpawnItem(Transform transform)
     {
