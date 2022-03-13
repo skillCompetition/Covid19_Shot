@@ -112,7 +112,7 @@ public class Player : MonoBehaviour
 
         yield return new WaitForSeconds(showTime);
 
-        sprite.color = new Color(1, 1, 1, 1);
+        sprite.color = Color.white;
 
         yield return new WaitForSeconds(realTime);
 

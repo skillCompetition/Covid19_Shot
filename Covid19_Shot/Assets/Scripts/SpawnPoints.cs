@@ -58,6 +58,10 @@ public class SpawnPoints : MonoBehaviour
         
     }
 
+    void EndSpawn()
+    {
+
+    }
     
 
     public void SpawnItem(Transform transform)

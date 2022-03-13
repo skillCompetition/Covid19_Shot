@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        Screen.SetResolution(1920,1080,true);
     }
 
     // Start is called before the first frame update

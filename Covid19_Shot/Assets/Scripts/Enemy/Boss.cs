@@ -25,7 +25,7 @@ public class Boss : Enemy
         bullet = Resources.Load("Bullet/Boss Bullet") as GameObject;
     }
 
-    void Start()
+    protected override void Start()
     {
         gameObject.SetActive(false);
     }
@@ -71,11 +71,11 @@ public class Boss : Enemy
 
         switch (attackNum) 
         {
-            case 0: StartCoroutine("Barrage");
+            case 0: StartCoroutine(Barrage());
                 break;
-            case 1: StartCoroutine("Circle");
+            case 1: StartCoroutine(Circle());
                 break;
-            case 2: StartCoroutine("SpawnEnemy");
+            case 2: StartCoroutine(SpawnEnemy());
                 break;
             default:
                 break;

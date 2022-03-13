@@ -26,9 +26,12 @@ public class Invincibility : Item
         player.curTime = 0;
 
         if (InvincibilityCoroutine != null)
+        { 
             StopCoroutine(player.ShowInvincibilityChane(3f,2.5f));
+            InvincibilityCoroutine = null;
+        }
 
-        player.StartCoroutine(player.ShowInvincibilityChane(3f, 2.5f));
+        InvincibilityCoroutine = player.StartCoroutine(player.ShowInvincibilityChane(3f, 2.5f));
         base.Use();
 
     }
