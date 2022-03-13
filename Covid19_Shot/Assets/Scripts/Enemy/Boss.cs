@@ -6,6 +6,7 @@ public class Boss : Enemy
 {
     GameObject bullet;
 
+    StageFlow stageFlow => SystemManager.Instance.StageFlow;
 
     [SerializeField] GameObject spawnEnemy;
 
@@ -48,8 +49,7 @@ public class Boss : Enemy
 
     public override void Dead()
     {
-        SystemManager.Instance.StageFlow.stage++;
-        SystemManager.Instance.StageFlow.CheckStage(SystemManager.Instance.StageFlow.stage);
+        stageFlow.CheckStage(stageFlow.stage);
         base.Dead();
     }
 
