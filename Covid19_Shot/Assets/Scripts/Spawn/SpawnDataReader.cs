@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public class Parce : MonoBehaviour
+public class SpawnDataReader : MonoBehaviour
 {
     public List<Spawn> spawnList = new List<Spawn>();
-
-
+    public string stageName;
+ 
     SpawnPoints spawnPoints => SystemManager.Instance.SpawnPoints;
 
 
     void Awake()
     {
-        ReadSpawnFile();
+        ReadSpawnFile(stageName);
 
     }
 
@@ -22,17 +22,16 @@ public class Parce : MonoBehaviour
         spawnPoints.StartCoroutine(spawnPoints.SpawnEnemy(spawnList));
     }
 
-    void Update()
-    {
-    }
 
-    void ReadSpawnFile()
+
+
+    void ReadSpawnFile(string stageName)
     {
         
         spawnList.Clear();
 
         //TextAsset : 텍스트 파일 에셋 클래스
-        TextAsset textFile = Resources.Load("Stage1") as TextAsset;
+        TextAsset textFile = Resources.Load(stageName) as TextAsset;
         //StringReader : 파일 내의 문자열 데이터 읽기 클래스
         StringReader stringReader = new StringReader(textFile.text);
 

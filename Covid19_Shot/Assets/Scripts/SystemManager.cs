@@ -62,6 +62,9 @@ public class SystemManager : MonoBehaviour
         get
         {
             return boss;
+
         }
     }
+
+    
 } 

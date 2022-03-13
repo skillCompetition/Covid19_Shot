@@ -57,7 +57,16 @@ public class Boss : Enemy
         base.Update();
     }
 
-    int attackNum = 0;
+    public override void Dead()
+    {
+        
+
+        base.Dead();
+    }
+
+
+
+    int attackPattern = 0;      //어떤 공격을 할지 정하는 인덱스
 
     /// <summary>
     /// 어떤 공격을 할지 정할 수 있음
@@ -66,10 +75,10 @@ public class Boss : Enemy
     {
 
 
-        if (attackNum >= 3)
-            attackNum = 0;
+        if (attackPattern >= 3)
+            attackPattern = 0;
 
-        switch (attackNum) 
+        switch (attackPattern) 
         {
             case 0: StartCoroutine(Barrage());
                 break;
@@ -81,7 +90,7 @@ public class Boss : Enemy
                 break;
         }
 
-        attackNum++;
+        attackPattern++;
     }
 
 
