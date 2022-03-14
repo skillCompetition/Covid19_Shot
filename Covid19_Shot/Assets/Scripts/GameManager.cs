@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     }
 
     public string thisGameScene;
-    void GameOver()
+    public void GameOver()
     {
         thisGameScene = SceneManager.GetActiveScene().name;
         Time.timeScale = 0;

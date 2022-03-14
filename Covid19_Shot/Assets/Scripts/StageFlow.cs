@@ -10,6 +10,9 @@ public class StageFlow : MonoBehaviour
     SpawnPoints spawnPoints =>
         SystemManager.Instance.SpawnPoints;
 
+    GameManager gameManager =>
+        SystemManager.Instance.GameManager;
+
     public Coroutine redCoroutine;
     public Coroutine whiteCoroutine;
 
@@ -44,6 +47,7 @@ public class StageFlow : MonoBehaviour
 
             case 3:
                 //∞‘¿” ≥°
+                gameManager.GameOver();
                 break;
             default:
                 break;

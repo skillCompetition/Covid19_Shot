@@ -35,7 +35,6 @@ public class Boss : Enemy
 
     void ShowBoss()
     {
-        Debug.Log("¸ØÃÄ!!");
         spawnPoint.StopCoroutine(stageFlow.redCoroutine);
         spawnPoint.StopCoroutine(stageFlow.whiteCoroutine);
     }
@@ -66,7 +65,6 @@ public class Boss : Enemy
 
     public override void Dead()
     {
-        Debug.Log("Á×À½");
         stageFlow.CheckStage(stageFlow.stage);
         stageFlow.redCoroutine = spawnPoint.StartCoroutine(spawnPoint.RedSpawn());
         stageFlow.whiteCoroutine = spawnPoint.StartCoroutine(spawnPoint.WhiteSpawn());
