@@ -13,14 +13,20 @@ public class GameManager : MonoBehaviour
     public int score;
     public int pain;
 
+    List<Rank> ranking = new List<Rank>(5);
+
+     
+
     [SerializeField] GameObject gameOverCanvas;
     [SerializeField] Text scoreText;
 
+    
+
     void Awake()
     {
+        DontDestroyOnLoad(gameObject);
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         gameOverCanvas.SetActive(false);
@@ -28,9 +34,9 @@ public class GameManager : MonoBehaviour
         HP = (int)MaxHP;
         pain = 30;
 
+        
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(HP <= 0  || pain >= 100)
