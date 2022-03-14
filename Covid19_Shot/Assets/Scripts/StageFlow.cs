@@ -10,20 +10,21 @@ public class StageFlow : MonoBehaviour
     SpawnPoints spawnPoints =>
         SystemManager.Instance.SpawnPoints;
 
+    public Coroutine redCoroutine;
+    public Coroutine whiteCoroutine;
+
     List<Spawn> spawnList = new List<Spawn>();
 
 
     public int stage = 1;
 
-    private void Awake()
-    {
-    }
 
     void Start()
     {
         CheckStage(stage);
 
-
+        redCoroutine = spawnPoints.StartCoroutine(spawnPoints.RedSpawn());
+        whiteCoroutine = spawnPoints.StartCoroutine(spawnPoints.WhiteSpawn());
     }
 
     public void CheckStage(int stage)
@@ -49,9 +50,4 @@ public class StageFlow : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

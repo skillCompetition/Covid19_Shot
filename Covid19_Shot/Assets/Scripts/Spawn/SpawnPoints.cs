@@ -8,28 +8,31 @@ public class SpawnPoints : MonoBehaviour
     //1 : C
     //2 : G
     //3 : V
-    //4 : R
-    //5 : W
+    [Header("Enemy")]
     public GameObject[] enemyType;
+    [SerializeField] Transform[] enemySpawnPos;
 
+    [Header("Boss")]
     [SerializeField] GameObject boss;
     [SerializeField] Transform bossPos;
 
-    //0 ~ 7 : Enemy + White
-    //8 ~ 9 : Red
-    [SerializeField] Transform[] spawnPoint;
- 
+    [Header("NPC")]
+    [SerializeField] GameObject red;
+    [SerializeField] float redCycle;
+    [SerializeField] int redper;
+    [SerializeField] Transform[] redSpawnPos;
+    [SerializeField] GameObject white;
+    [SerializeField] float whiteCycle;
+    [SerializeField] int whiteper;
+    [SerializeField] Transform[] whiteSpawnPos;
+
+    [Header("Item")]
     [SerializeField] GameObject[] items;
 
     public Transform whiteTrans;
 
     public float ranSpawnTime;
 
-
-    void Start()
-    {
-        //StartCoroutine(SpawnRedBloodCell());
-    }
 
     public IEnumerator SpawnEnemy(List<Spawn> spawnList)
     {
@@ -53,18 +56,12 @@ public class SpawnPoints : MonoBehaviour
                 case "V":
                     enemy = enemyType[3];
                     break;
-                case "R":
-                    enemy = enemyType[4];
-                    break;
-                case "W":
-                    enemy = enemyType[5];
-                    break;
 
                 default:
                     break;
             }
 
-             Instantiate(enemy, spawnPoint[spawnList[i].point].position, spawnPoint[spawnList[i].point].rotation);
+             Instantiate(enemy, enemySpawnPos[spawnList[i].point].position, enemySpawnPos[spawnList[i].point].rotation);
 
             yield return new WaitForSeconds(spawnList[i].delay);
         }
@@ -80,5 +77,38 @@ public class SpawnPoints : MonoBehaviour
         Quaternion rotation = Quaternion.Euler(0,0,90);
 
         Instantiate(items[Random.Range(0, items.Length)],transform.position, rotation);
+    }
+
+    public IEnumerator RedSpawn()
+    {
+
+        for (; ; )
+        {
+            if (Random.Range(0, redper) == 0)
+            {
+                Instantiate(red, redSpawnPos[Random.Range(0, whiteSpawnPos.Length)]);
+            }
+            else
+                yield return null;
+
+            yield return new WaitForSeconds(redCycle);
+        }
+
+    }
+
+
+    
+    public IEnumerator WhiteSpawn()
+    {
+        for (; ; )
+        {
+
+            if (Random.Range(0, whiteper) == 0)
+                Instantiate(white, whiteSpawnPos[Random.Range(0, whiteSpawnPos.Length)]);
+            else
+                yield return null;
+
+            yield return new WaitForSeconds(whiteCycle);
+        }
     }
 }

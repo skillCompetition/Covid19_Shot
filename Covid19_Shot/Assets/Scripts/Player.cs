@@ -59,7 +59,6 @@ public class Player : MonoBehaviour
     void OnFire()
     {
         bullet = Instantiate(bullets[bulletLevel], transform.position, transform.rotation);
-        //bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.up.normalized * speed, ForceMode2D.Impulse);
     }
 
    

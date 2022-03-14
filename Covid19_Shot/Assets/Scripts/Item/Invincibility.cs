@@ -17,7 +17,7 @@ public class Invincibility : Item
 
         if (InvincibilityCoroutine != null)
         { 
-            StopCoroutine(player.ShowInvincibilityChane(3f,2.5f));
+            StopCoroutine(InvincibilityCoroutine);
             InvincibilityCoroutine = null;
         }
 

@@ -9,14 +9,14 @@ public class Boss : Enemy
     [SerializeField] Image HPImg;
 
     [SerializeField] const float MaxHP = 100f;
-
-
     StageFlow stageFlow => SystemManager.Instance.StageFlow;
+    SpawnPoints spawnPoint => SystemManager.Instance.SpawnPoints;
+    
 
     [SerializeField] GameObject spawnEnemy;
 
 
-    [SerializeField] Transform[] spawnPoints; 
+    [SerializeField] Transform[] enemySpawnPoints; 
     protected override void Awake()
     {
         base.Awake();
@@ -24,11 +24,20 @@ public class Boss : Enemy
         HPImg = HPImg.GetComponent<Image>();
     }
 
-    void Start()
+    protected override void Start()
     {
+        ShowBoss();
         HP = (int)MaxHP;
         Invoke("Stop", 2f);
         ChooseAttack();
+
+    }
+
+    void ShowBoss()
+    {
+        Debug.Log("¸ØÃÄ!!");
+        spawnPoint.StopCoroutine(stageFlow.redCoroutine);
+        spawnPoint.StopCoroutine(stageFlow.whiteCoroutine);
     }
 
     protected override void Update()
@@ -42,10 +51,6 @@ public class Boss : Enemy
         ShowHPImg();
     }
 
-    public void ShowBoss()
-    {
-        gameObject.SetActive(true);
-    }
 
     private void ShowHPImg()
     {
@@ -61,7 +66,10 @@ public class Boss : Enemy
 
     public override void Dead()
     {
+        Debug.Log("Á×À½");
         stageFlow.CheckStage(stageFlow.stage);
+        stageFlow.redCoroutine = spawnPoint.StartCoroutine(spawnPoint.RedSpawn());
+        stageFlow.whiteCoroutine = spawnPoint.StartCoroutine(spawnPoint.WhiteSpawn());
         base.Dead();
     }
 
@@ -109,7 +117,6 @@ public class Boss : Enemy
         {
             GameObject bullet = Instantiate(this.bullet, transform.position, transform.rotation);
             Vector2 dirVec = new Vector2(Mathf.Cos(Mathf.PI * 10 * i / bulletNum), -1);
-            //bullet.GetComponent<Rigidbody2D>().AddForce(dirVec.normalized * 10, ForceMode2D.Impulse);
             bullet.GetComponent<Bullet>().moveVec = dirVec;
             yield return new WaitForSeconds(0.2f);
         }
@@ -138,9 +145,6 @@ public class Boss : Enemy
                                           Mathf.Cos(Mathf.PI * 2 * i / bulletNum));
 
 
-            //bullet.GetComponent<Rigidbody2D>().AddForce(dirVec.normalized * 10, ForceMode2D.Impulse);
-            //bullet2.GetComponent<Rigidbody2D>().AddForce(dirVec2.normalized * 10, ForceMode2D.Impulse);
-
             bullet.GetComponent<Bullet>().moveVec = dirVec;
             bullet2.GetComponent<Bullet>().moveVec = dirVec2;
 
@@ -161,8 +165,8 @@ public class Boss : Enemy
             yield break;
         for (int i = 0; i < 3; i++)
         {
-            Instantiate(spawnEnemy, spawnPoints[0].position, spawnPoints[0].rotation);
-            Instantiate(spawnEnemy, spawnPoints[1].position, spawnPoints[1].rotation);
+            Instantiate(spawnEnemy, enemySpawnPoints[0].position, enemySpawnPoints[0].rotation);
+            Instantiate(spawnEnemy, enemySpawnPoints[1].position, enemySpawnPoints[1].rotation);
             yield return new WaitForSeconds(0.5f);
 
         }
