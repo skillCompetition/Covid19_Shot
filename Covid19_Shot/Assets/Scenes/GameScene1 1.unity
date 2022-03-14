@@ -1401,7 +1401,7 @@ MonoBehaviour:
   - {fileID: 3453254480457259701, guid: 00967d30f0106154a883c7470f99ed56, type: 3}
   - {fileID: 4331771241176428615, guid: 117d0cd050355554fb1d8655d99a6302, type: 3}
   - {fileID: 5650037111168888843, guid: b91e7f256d999cb418e1793505e8d452, type: 3}
-  boss: {fileID: 8628975340219749922, guid: af8bf6e61a5c0c446b91f97f13b30f5d, type: 3}
+  boss: {fileID: 6639799109768389040, guid: af8bf6e61a5c0c446b91f97f13b30f5d, type: 3}
   bossPos: {fileID: 2129909409}
   spawnPoint:
   - {fileID: 2117577959}

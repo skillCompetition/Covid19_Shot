@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Boss : Enemy
 {
     GameObject bullet;
+    [SerializeField] Image HPImg;
+
+    [SerializeField] const float MaxHP = 100f;
+
 
     StageFlow stageFlow => SystemManager.Instance.StageFlow;
 
@@ -16,14 +21,26 @@ public class Boss : Enemy
     {
         base.Awake();
         bullet = Resources.Load("Bullet/Boss Bullet") as GameObject;
+        HPImg = HPImg.GetComponent<Image>();
     }
 
     protected override void Start()
     {
-        //gameObject.SetActive(false);
+        HP = (int)MaxHP;
         rigid.AddForce(Vector2.down.normalized * speed);
         Invoke("Stop", 2f);
         ChooseAttack();
+    }
+
+    protected override void Update()
+    {
+        if (HP <= 0)
+        {
+            StopAllCoroutines();
+        }
+        base.Update();
+
+        ShowHPImg();
     }
 
     public void ShowBoss()
@@ -31,19 +48,17 @@ public class Boss : Enemy
         gameObject.SetActive(true);
     }
 
+    private void ShowHPImg()
+    {
+        HPImg.fillAmount = HP / MaxHP;
+    }
+
     private void Stop()
     {
         rigid.velocity = Vector2.zero;
     }
 
-    protected override void Update()
-    {
-        if(HP <= 0)
-        {
-            StopAllCoroutines();
-        }
-        base.Update();
-    }
+
 
     public override void Dead()
     {

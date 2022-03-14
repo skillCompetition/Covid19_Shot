@@ -38,7 +38,7 @@ public class StageFlow : MonoBehaviour
             case 2:
                 spawnList = spawnDataReader.ReadSpawnFile("stage2");
                 spawnPoints.StartCoroutine(spawnPoints.SpawnEnemy(spawnList));
-                stage++;
+                this.stage++;
                 break;
 
             case 3:
