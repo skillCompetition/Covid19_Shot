@@ -135,8 +135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfa69f4491312384bbfaaf9bb81f6679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 5
-  speed: 50
+  HP: 3
+  speed: 5
+  isDead: 0
 --- !u!95 &7565534351641013108
 Animator:
   serializedVersion: 3

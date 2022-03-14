@@ -29,10 +29,10 @@ public class CancerCell : Enemy
 
         for (int i = 0; i < 3;i++)
         {
-            Vector3 dirVec = player.transform.position - transform.position;
             GameObject bullet = Instantiate(this.bullet, transform.position, transform.rotation);
-            bullet.GetComponent<Rigidbody2D>().AddForce(dirVec.normalized * 5, ForceMode2D.Impulse);
-            yield return new WaitForSeconds(0.5f);
+            bullet.GetComponent<Bullet>().moveVec = Vector3.down;
+            
+            yield return new WaitForSeconds(0.1f);
 
         }
 

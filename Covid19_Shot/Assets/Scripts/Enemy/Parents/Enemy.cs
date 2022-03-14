@@ -20,14 +20,10 @@ public class Enemy : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    /// <summary>
-    /// 적군이 처음 등장하자마자 이동한다
-    /// </summary>
     protected virtual void Start()
     {
-        rigid.AddForce(Vector2.down.normalized * speed);
-    }
 
+    }
 
     protected virtual void Update()
     {
@@ -35,6 +31,8 @@ public class Enemy : MonoBehaviour
         {
             Dead();
         }
+        transform.Translate(Vector3.down * speed * Time.deltaTime);
+
     }
 
     public virtual void Dead()

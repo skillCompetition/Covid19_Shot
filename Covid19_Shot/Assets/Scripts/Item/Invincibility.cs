@@ -5,19 +5,9 @@ using UnityEngine;
 public class Invincibility : Item
 {
     Coroutine InvincibilityCoroutine = null;
-    protected override void Awake()
+    protected override void Update()
     {
-        base.Awake();
-    }
-
-    protected override void Start()
-    {
-        base.Start();
-    }
-
-    void Update()
-    {
-        
+        base.Update();
     }
 
     protected override void Use()

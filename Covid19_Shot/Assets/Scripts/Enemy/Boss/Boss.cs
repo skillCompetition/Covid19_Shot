@@ -24,10 +24,9 @@ public class Boss : Enemy
         HPImg = HPImg.GetComponent<Image>();
     }
 
-    protected override void Start()
+    void Start()
     {
         HP = (int)MaxHP;
-        rigid.AddForce(Vector2.down.normalized * speed);
         Invoke("Stop", 2f);
         ChooseAttack();
     }
@@ -55,7 +54,7 @@ public class Boss : Enemy
 
     private void Stop()
     {
-        rigid.velocity = Vector2.zero;
+        speed = 0;
     }
 
 
@@ -110,7 +109,8 @@ public class Boss : Enemy
         {
             GameObject bullet = Instantiate(this.bullet, transform.position, transform.rotation);
             Vector2 dirVec = new Vector2(Mathf.Cos(Mathf.PI * 10 * i / bulletNum), -1);
-            bullet.GetComponent<Rigidbody2D>().AddForce(dirVec.normalized * 10, ForceMode2D.Impulse);
+            //bullet.GetComponent<Rigidbody2D>().AddForce(dirVec.normalized * 10, ForceMode2D.Impulse);
+            bullet.GetComponent<Bullet>().moveVec = dirVec;
             yield return new WaitForSeconds(0.2f);
         }
         ChooseAttack();
@@ -136,10 +136,13 @@ public class Boss : Enemy
                                          Mathf.Sin(Mathf.PI * 2 * i / bulletNum));
             Vector2 dirVec2 = new Vector2(Mathf.Sin(Mathf.PI * 2 * i / bulletNum),
                                           Mathf.Cos(Mathf.PI * 2 * i / bulletNum));
-                            
 
-            bullet.GetComponent<Rigidbody2D>().AddForce(dirVec.normalized * 10, ForceMode2D.Impulse);
-            bullet2.GetComponent<Rigidbody2D>().AddForce(dirVec2.normalized * 10, ForceMode2D.Impulse);
+
+            //bullet.GetComponent<Rigidbody2D>().AddForce(dirVec.normalized * 10, ForceMode2D.Impulse);
+            //bullet2.GetComponent<Rigidbody2D>().AddForce(dirVec2.normalized * 10, ForceMode2D.Impulse);
+
+            bullet.GetComponent<Bullet>().moveVec = dirVec;
+            bullet2.GetComponent<Bullet>().moveVec = dirVec2;
 
             yield return new WaitForSeconds(0.2f);
         }

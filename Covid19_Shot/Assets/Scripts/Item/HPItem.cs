@@ -7,21 +7,10 @@ public class HPItem : Item
 
     [SerializeField] int recoverAmount;     //È¸º¹·®
 
-    protected override void Awake()
-    {
-        base.Awake();
-    }
 
-    protected override void Start()
+    protected override void Update()
     {
-        base.Start();
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        base.Update();
     }
 
     protected override void Use()

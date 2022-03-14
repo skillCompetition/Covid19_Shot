@@ -5,6 +5,9 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public int damage;
+    public int speed;
+
+    public Vector3 moveVec;
 
     public enum BulletType
     {
@@ -13,7 +16,23 @@ public class Bullet : MonoBehaviour
     }
 
     public BulletType myBullet;
-    
+
+    void Update()
+    {
+        switch (myBullet)
+        {
+            case BulletType.Player:
+                transform.Translate(Vector3.up * speed * Time.deltaTime);
+                break;
+            case BulletType.Enemy:
+                transform.Translate(moveVec * speed * Time.deltaTime);
+
+                break;
+            default:
+                break;
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
 

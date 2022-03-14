@@ -13,14 +13,12 @@ public class WhiteBloodCell : NPC
     void Start()
     {
 
-        rigid.AddForce(Vector2.down.normalized * speed, ForceMode2D.Impulse);
     }
 
-    Vector3 pos;
 
     void Update()
     {
-        pos = transform.position;
+        transform.Translate(Vector3.down * speed * Time.deltaTime);
     }
 
     protected override void Dead()

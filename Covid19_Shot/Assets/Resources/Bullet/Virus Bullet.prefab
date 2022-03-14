@@ -84,6 +84,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
+  speed: 3
+  moveVec: {x: 0, y: 0, z: 0}
   myBullet: 1
 --- !u!1 &1493866471614982265
 GameObject:

@@ -307,7 +307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 30
-  speed: 100
+  speed: 2
   isDead: 0
   HPImg: {fileID: 3274634207165853847}
   spawnEnemy: {fileID: 2586717438135840694, guid: 5aa498369ed9d6242b4033def0a60485, type: 3}

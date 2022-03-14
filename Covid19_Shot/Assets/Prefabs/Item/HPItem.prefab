@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  recoverAmount: 0
+  recoverAmount: 2
 --- !u!70 &7466193440856681019
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

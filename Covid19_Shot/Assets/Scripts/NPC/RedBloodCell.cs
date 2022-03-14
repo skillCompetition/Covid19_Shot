@@ -13,14 +13,13 @@ public class RedBloodCell : NPC
 
     void Start()
     {
-        rigid.AddForce(Vector2.up.normalized * speed,ForceMode2D.Impulse);
     }
 
 
 
     void Update()
     {
-        
+        transform.Translate(Vector3.up * speed * Time.deltaTime);
     }
 
     protected override void Dead()

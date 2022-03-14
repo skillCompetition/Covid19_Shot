@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class PowerUp : Item
 {
-    protected override void Awake()
+    protected override void Update()
     {
-        base.Awake();
-    }
-
-    protected override void Start()
-    {
-        base.Start();
+        base.Update();
     }
 
     protected override void Use()

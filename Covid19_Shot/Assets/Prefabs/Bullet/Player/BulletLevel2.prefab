@@ -84,6 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 3
+  speed: 5
   myBullet: 0
 --- !u!1001 &718351162642683262
 PrefabInstance:

@@ -146,7 +146,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 30
-  speed: 15
+  speed: 6
+  isDead: 0
 --- !u!95 &8801157429178467452
 Animator:
   serializedVersion: 3

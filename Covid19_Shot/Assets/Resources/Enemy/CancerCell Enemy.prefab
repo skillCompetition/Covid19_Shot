@@ -99,7 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 20
-  speed: 100
+  speed: 10
+  isDead: 0
 --- !u!50 &4184684300356200437
 Rigidbody2D:
   serializedVersion: 4

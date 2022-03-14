@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         anim.SetInteger("move", (int)moveX);
-
+        transform.position += new Vector3(moveX, moveY, 0) * speed * Time.deltaTime;
         curTime += Time.deltaTime;
 
     }
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position += new Vector3(moveX, moveY, 0) * speed * Time.deltaTime;
+
     }
 
     void OnMove(InputValue inputValue)
@@ -55,12 +55,11 @@ public class Player : MonoBehaviour
 
     }
 
+    GameObject bullet;
     void OnFire()
     {
-
-
-        GameObject bullet = Instantiate(bullets[bulletLevel], transform.position, transform.rotation);
-        bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.up.normalized * speed, ForceMode2D.Impulse);
+        bullet = Instantiate(bullets[bulletLevel], transform.position, transform.rotation);
+        //bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.up.normalized * speed, ForceMode2D.Impulse);
     }
 
    

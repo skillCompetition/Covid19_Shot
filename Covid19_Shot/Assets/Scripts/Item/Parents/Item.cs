@@ -5,25 +5,12 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     [SerializeField] protected int speed;
-    protected Rigidbody2D rigid;
     protected Player player => SystemManager.Instance.Player;
 
-    protected virtual void Awake()
+    protected virtual void Update()
     {
-        rigid = GetComponent<Rigidbody2D>();
-    }
+        transform.Translate(Vector3.left * speed * Time.deltaTime);
 
-
-    // Start is called before the first frame update
-    protected virtual void Start()
-    {
-        rigid.AddForce(Vector2.down.normalized * speed,ForceMode2D.Impulse);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     protected virtual void Use()

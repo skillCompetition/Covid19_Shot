@@ -6,15 +6,9 @@ public class PainReduction : Item
 {
     [SerializeField] int decreaseAmount;
 
-    protected override void Awake()
+    protected override void Update()
     {
-        base.Awake();
-    }
-
-
-    protected override void Start()
-    {
-        base.Start();
+        base.Update();
     }
 
     protected override void Use()
