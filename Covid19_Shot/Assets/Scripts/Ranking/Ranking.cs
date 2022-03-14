@@ -6,10 +6,15 @@ public class Ranking : MonoBehaviour
 {
     List<Rank> ranking = new List<Rank>();
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        
+        RankingSet("r",0);
+        RankingSet("r",12);
+        RankingSet("r",4);
+        RankingSet("r",9);
+        RankingSet("r",90);
+
+        Check();
     }
 
 
@@ -19,17 +24,19 @@ public class Ranking : MonoBehaviour
 
         rank.name = name;
         rank.score = score;
+        ranking.Add(rank);
 
+
+        //람다식을 이용해서 점수 순으로 정렬
+        ranking.Sort((rank1, rank2) => rank1.score.CompareTo(rank2.score));
+        
+    }
+
+    void Check()
+    {
         for (int i = 0; i < ranking.Count; i++)
         {
-            if(rank.score >= ranking[i].score)
-            {
-                Rank temp = new Rank();
-                temp = rank;
-                ranking[i] = temp;
-            }
+            Debug.Log(ranking[i].score);
         }
-
-        ranking.Add(rank);
     }
 }
