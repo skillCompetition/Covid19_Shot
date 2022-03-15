@@ -47,7 +47,7 @@ public class StageFlow : MonoBehaviour
 
             case 3:
                 //∞‘¿” ≥°
-                gameManager.GameOver();
+                gameManager.GameOver(true);
                 break;
             default:
                 break;

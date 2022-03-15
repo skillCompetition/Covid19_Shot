@@ -77,4 +77,14 @@ public class SystemManager : MonoBehaviour
         }
     }
 
+    [SerializeField]
+    Ranking ranking;
+    public Ranking Ranking
+    {
+        get
+        {
+            return ranking;
+        }
+    }
+
 } 

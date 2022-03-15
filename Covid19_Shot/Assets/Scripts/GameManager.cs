@@ -13,14 +13,6 @@ public class GameManager : MonoBehaviour
     public int score;
     public int pain;
 
-    List<Rank> ranking = new List<Rank>(5);
-
-     
-
-    [SerializeField] GameObject gameOverCanvas;
-    [SerializeField] Text scoreText;
-
-    
 
     void Awake()
     {
@@ -29,7 +21,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        gameOverCanvas.SetActive(false);
         Time.timeScale = 1;
         HP = (int)MaxHP;
         pain = 30;
@@ -41,17 +32,22 @@ public class GameManager : MonoBehaviour
     {
         if(HP <= 0  || pain >= 100)
         {
-            GameOver();
+            GameOver(false);
         }
     }
 
     public string thisGameScene;
-    public void GameOver()
+    public void GameOver(bool isClear)
     {
-        thisGameScene = SceneManager.GetActiveScene().name;
-        Time.timeScale = 0;
-        gameOverCanvas.SetActive(true);
-        scoreText.text = "Score: " + score.ToString();
+
+    }
+
+    void RankingUpdate()
+    {
+    }
+    
+    public void ConfirmBtnClick()
+    {
     }
 
     public void RestartBtnCilck()
