@@ -10,7 +10,7 @@ public class Ranking : MonoBehaviour
     [SerializeField] Text[] scores;
 
 
-    public List<Rank> ranking = new List<Rank>();
+    public static List<Rank>  ranking = new List<Rank>();
 
     void Start()
     {
@@ -25,7 +25,7 @@ public class Ranking : MonoBehaviour
     }
 
 
-    public void RankingSet(string name, int score)
+    public static void RankingSet(string name, int score)
     {
 
         Rank rank = new Rank();

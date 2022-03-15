@@ -17,6 +17,7 @@ public class SystemManager : MonoBehaviour
 
     void Awake()
     {
+
         if (instance != null)
         {
             Debug.LogError("");
@@ -74,16 +75,6 @@ public class SystemManager : MonoBehaviour
         get
         {
             return stageFlow;
-        }
-    }
-
-    [SerializeField]
-    Ranking ranking;
-    public Ranking Ranking
-    {
-        get
-        {
-            return ranking;
         }
     }
 

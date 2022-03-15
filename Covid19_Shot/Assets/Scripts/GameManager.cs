@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public int score;
     public int pain;
 
+    bool isGameEnd;
+
 
     void Awake()
     {
@@ -30,7 +32,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(HP <= 0  || pain >= 100)
+        if((HP <= 0  || pain >= 100 )&& !isGameEnd)
         {
             GameOver(false);
         }
@@ -39,17 +41,12 @@ public class GameManager : MonoBehaviour
     public string thisGameScene;
     public void GameOver(bool isClear)
     {
+        isGameEnd = true;
+        SceneManager.LoadScene("EndScene");
 
     }
 
-    void RankingUpdate()
-    {
-    }
     
-    public void ConfirmBtnClick()
-    {
-    }
-
     public void RestartBtnCilck()
     {
         SceneManager.LoadScene(thisGameScene);
