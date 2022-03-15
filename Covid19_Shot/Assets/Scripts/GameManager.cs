@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
     {
         isGameEnd = true;
         SceneManager.LoadScene("EndScene");
+
     }
 
     

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EndUIController : MonoBehaviour
@@ -11,17 +10,12 @@ public class EndUIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //scoreTxt.text = "score: " + SystemManager.Instance.GameManager.score.ToString();
+        //scoreTxt.text = SystemManager.Instance.GameManager.score.ToString();
     }
 
-    public void RestartBtn()
+    // Update is called once per frame
+    void Update()
     {
-        SceneManager.LoadScene("GameScene");
-    }
-
-    public void EndGameBtn()
-    {
-        SceneManager.LoadScene("EndScene");
-
+        
     }
 }

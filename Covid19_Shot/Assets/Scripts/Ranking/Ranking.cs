@@ -9,25 +9,23 @@ public class Ranking : MonoBehaviour
     [SerializeField] Text[] names;
     [SerializeField] Text[] scores;
 
-    [SerializeField] InputField inputText;
-    [SerializeField] GameObject inputPanel;
+    int score;
+    string ID;
+    [SerializeField] InputField input;
+    [SerializeField] GameObject panel;
 
-    public static List<Rank>  ranking = new List<Rank>();
-
-
+    public List<Rank>  ranking = new List<Rank>();
 
     void Start()
     {
-        if (SystemManager.Instance.GameManager.score >= ranking[ranking.Count].score)
-            ShowInputRank(SystemManager.Instance.GameManager.score);
+        //score = SystemManager.Instance.GameManager.score
 
-        Debug.Log("감자");
-        ShowRanking();
+        SetRanking(30);
 
     }
 
 
-    public static void RankingSet(string name, int score)
+    public void RankingSet(string name, int score)
     {
 
         Rank rank = new Rank();
@@ -40,24 +38,37 @@ public class Ranking : MonoBehaviour
         //람다식을 이용해서 점수 순으로 정렬
         ranking.Sort((rank1, rank2) => rank1.score.CompareTo(rank2.score));
 
+        ShowRanking();
     }
 
 
-    void ShowRanking()
+    public void ShowRanking()
     {
-        for (int i = 1; i <= ranking.Count; i++)
+        for (int i = 0; i < names.Length; i++)
         {
-            Debug.Log(names.Length);
-            names[i - 1].text = ranking[names.Length - i].name;
-            scores[i - 1].text = ranking[names.Length - i].score.ToString();
+            Debug.Log(ranking[0].name);
+
+            names[i].text = ranking[names.Length - i - 1].name;
+            scores[i].text = ranking[names.Length - i - 1].score.ToString();
         }
     }
 
-    void ShowInputRank(int score)
+    void SetRanking(int score)
     {
-        inputPanel.SetActive(true);
-        string name = inputText.text;
+        score = 30; //임시
 
-        RankingSet(name, score);
+        ID = input.text;
+        Debug.Log(ID);
+    }
+
+    public void Test(Text text)
+    {
+        Debug.Log("Text" + text);
+    }
+
+    public void InputBtnClick()
+    {
+        panel.SetActive(false);
+        RankingSet(ID, score);
     }
 }
