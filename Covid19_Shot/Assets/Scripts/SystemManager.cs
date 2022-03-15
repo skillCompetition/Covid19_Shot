@@ -6,6 +6,7 @@ public class SystemManager : MonoBehaviour
 {
     static SystemManager instance = null;
     
+
     public static SystemManager Instance
     {
         get
