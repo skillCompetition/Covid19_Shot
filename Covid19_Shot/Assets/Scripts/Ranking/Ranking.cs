@@ -1,25 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Ranking : MonoBehaviour
 {
+
+    [SerializeField] Text[] names;
+    [SerializeField] Text[] scores;
+
+
     List<Rank> ranking = new List<Rank>();
 
     void Start()
     {
-        RankingSet("r",0);
-        RankingSet("r",12);
-        RankingSet("r",4);
-        RankingSet("r",9);
-        RankingSet("r",90);
+        RankingSet("r", 0);
+        RankingSet("rr", 12);
+        RankingSet("rrr", 4);
+        RankingSet("rrrr", 9);
+        RankingSet("rrrrr", 90);
 
-        Check();
+        ShowRanking();
+
     }
 
 
     public void RankingSet(string name, int score)
     {
+
         Rank rank = new Rank();
 
         rank.name = name;
@@ -29,14 +37,17 @@ public class Ranking : MonoBehaviour
 
         //람다식을 이용해서 점수 순으로 정렬
         ranking.Sort((rank1, rank2) => rank1.score.CompareTo(rank2.score));
-        
+
     }
 
-    void Check()
+
+    void ShowRanking()
     {
-        for (int i = 0; i < ranking.Count; i++)
+        for (int i = 1; i <= names.Length; i++)
         {
-            Debug.Log(ranking[i].score);
+            Debug.Log(names.Length - i);
+            names[i - 1].text = ranking[names.Length - i].name;
+            scores[i - 1].text = ranking[names.Length - i].score.ToString();
         }
     }
 }
