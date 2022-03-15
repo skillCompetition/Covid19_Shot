@@ -20,7 +20,7 @@ public class Ranking : MonoBehaviour
     {
         //score = SystemManager.Instance.GameManager.score
 
-        SetRanking(30);
+        SetRanking();
 
     }
 
@@ -53,17 +53,15 @@ public class Ranking : MonoBehaviour
         }
     }
 
-    void SetRanking(int score)
+    void SetRanking()
     {
-        score = 30; //юс╫ц
-
         ID = input.text;
         Debug.Log(ID);
     }
 
-    public void Test(Text text)
+    public void Test(string text)
     {
-        Debug.Log("Text" + text);
+        Debug.Log("Text : " + text);
     }
 
     public void InputBtnClick()
