@@ -9,17 +9,19 @@ public class Ranking : MonoBehaviour
     [SerializeField] Text[] names;
     [SerializeField] Text[] scores;
 
+    [SerializeField] InputField inputText;
+    [SerializeField] GameObject inputPanel;
 
     public static List<Rank>  ranking = new List<Rank>();
 
+
+
     void Start()
     {
-        RankingSet("r", 0);
-        RankingSet("rr", 12);
-        RankingSet("rrr", 4);
-        RankingSet("rrrr", 9);
-        RankingSet("rrrrr", 90);
+        if (SystemManager.Instance.GameManager.score >= ranking[ranking.Count].score)
+            ShowInputRank(SystemManager.Instance.GameManager.score);
 
+        Debug.Log("°¨ÀÚ");
         ShowRanking();
 
     }
@@ -43,11 +45,19 @@ public class Ranking : MonoBehaviour
 
     void ShowRanking()
     {
-        for (int i = 1; i <= names.Length; i++)
+        for (int i = 1; i <= ranking.Count; i++)
         {
-            Debug.Log(names.Length - i);
+            Debug.Log(names.Length);
             names[i - 1].text = ranking[names.Length - i].name;
             scores[i - 1].text = ranking[names.Length - i].score.ToString();
         }
+    }
+
+    void ShowInputRank(int score)
+    {
+        inputPanel.SetActive(true);
+        string name = inputText.text;
+
+        RankingSet(name, score);
     }
 }
